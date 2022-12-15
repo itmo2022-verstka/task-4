@@ -2,7 +2,7 @@
 ​
 ## Как отправить решение:
 1. Склонируйте репозиторий ([тут](pull.md) есть описание как это сделать).
-2. Напишите код в файлах ```delorean-dmc-12/src/index.css``` ```delorean-dmc-12/src/index.html```
+2. Напишите код в файлах ```catgram/src/index.css``` ```catgram/src/index.html```
 3. Отправьте Pull Request. В качестве commit message пишите что изменилось.
 
 ## Основное задание
