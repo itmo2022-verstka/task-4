@@ -1,1 +1,369 @@
-/* TODO */
+.main-cat {
+  position: absolute;
+  top: 250px;
+
+  overflow: hidden;
+  grid-column-end: 3;
+  grid-column-start: 2;
+
+  width: 600px;
+  height: 600px;
+}
+
+.another-cat {
+  position: absolute;
+  top: 250px;
+  z-index: -1;
+
+  overflow: hidden;
+  grid-column-end: 3;
+  grid-column-start: 2;
+
+  width: 600px;
+  height: 600px;
+}
+
+.svg-z {
+  display: block;
+
+  width: 90px;
+  height: 90px;
+}
+
+.scale:checked ~ .image-cat .main-cat {
+  transform: scaleX(-1);
+}
+
+.another:checked ~ .image-cat-another .another-cat {
+  z-index: 1;
+
+  display: block;
+}
+
+.another:checked ~ .image-cat .main-cat {
+  display: none;
+}
+
+.another:not(:checked) ~ .image-cat-another .another-cat {
+  display: none;
+}
+
+.squere:checked ~ .image-cat .main-cat {
+  width: 900px;
+}
+
+input {
+  display: none;
+}
+
+.cat-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  height: 100%;
+  margin-right: -50%;
+
+  transition: 3s filter linear;
+
+  transform: translate(-50%, -50%);
+}
+
+header {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+
+.icons {
+  position: relative;
+
+  display: grid;
+  grid-column-end: 3;
+  grid-column-start: 2;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.scaling4:checked ~ .image-cat .main-cat .cat-img {
+  height: 750px;
+}
+.scaling4:checked ~ header .icons .label-scaling3 {
+  z-index: 1;
+}
+.scaling3:checked ~ .image-cat .main-cat .cat-img {
+  height: 1000px;
+}
+.scaling3:checked ~ header .icons .label-scaling2 {
+  z-index: 1;
+}
+.scaling2:checked ~ .image-cat .main-cat .cat-img {
+  height: 1250px;
+}
+.scaling2:checked ~ header .icons .label-scaling1 {
+  z-index: 1;
+}
+.scaling1:checked ~ .image-cat .main-cat .cat-img {
+  height: 600px;
+}
+.scaling1:checked ~ header .icons .label-scaling4 {
+  z-index: 1;
+}
+
+.rotate4:checked ~ .image-cat .main-cat {
+  transform: rotate(90deg);
+}
+
+.rotate4:checked ~ header .icons .label-rotate3 {
+  z-index: 1;
+}
+
+.rotate3:checked ~ header .icons .label-rotate2 {
+  z-index: 1;
+}
+
+.rotate2:checked ~ header .icons .label-rotate1 {
+  z-index: 1;
+}
+
+.rotate1:checked ~ header .icons .label-rotate4 {
+  z-index: 1;
+}
+
+.rotate3:checked ~ .image-cat .main-cat {
+  transform: rotate(180deg);
+}
+
+.rotate2:checked ~ .image-cat .main-cat {
+  transform: rotate(270deg);
+}
+
+.image-cat {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+
+.image-cat-another {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+
+.squere:checked ~ .image-cat {
+  grid-template-columns: 1fr 900px 1fr;
+}
+
+label {
+  position: absolute;
+}
+
+.filter {
+  position: relative;
+
+  display: inline-block;
+  overflow: hidden;
+
+  width: 300px;
+  height: 300px;
+}
+
+.car .filter .cat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  height: 100%;
+  margin-right: -50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.car {
+  position: absolute;
+  top: 1200px;
+  left: 50%;
+
+  overflow: hidden;
+
+  width: 1200px;
+  height: 400px;
+  margin-right: -50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  display: inline-block;
+}
+.text {
+  color: darkgrey;
+  font-size: 40px;
+  text-align: center;
+}
+
+.carsel {
+  position: absolute;
+  left: 0;
+
+  width: 4000px;
+  height: 300px;
+}
+
+.label-right2,
+.label-right1 {
+  position: absolute;
+  top: 1150px;
+  left: 20%;
+  z-index: 1;
+}
+
+.label-right3,
+.label-right4 {
+  position: absolute;
+  top: 1150px;
+  right: 20%;
+  z-index: 1;
+}
+
+.left-arrow,
+.right-arrow {
+  fill: darkgrey;
+}
+
+.left-arrow {
+  transform: scaleX(-1);
+}
+
+.right2:checked ~ .car .carsel {
+  left: -25%;
+}
+
+.right2:checked ~ .label-right4 .right-arrow {
+  fill: black;
+}
+
+.right2:checked ~ .label-right1 .left-arrow {
+  fill: black;
+}
+
+.right1:checked ~ .label-right3 .right-arrow {
+  fill: black;
+}
+
+.right3:checked ~ .label-right2 .left-arrow {
+  fill: black;
+}
+
+.right3:checked ~ .label-right4 .right-arrow {
+  fill: black;
+}
+
+.right4:checked ~ .label-right2 .left-arrow {
+  fill: black;
+}
+
+.right2:checked ~ .label-right1 {
+  z-index: 2;
+}
+
+.right1:checked ~ .car .carsel {
+  left: -50%;
+}
+
+.right1:checked ~ .label-right3 {
+  z-index: 2;
+}
+
+.right1:checked ~ .label-right1 {
+  z-index: 2;
+}
+
+.right3:checked ~ .car .carsel {
+  left: -25%;
+}
+
+.svg-3 {
+  display: block;
+
+  width: 90px;
+  height: 90px;
+}
+
+.svg-1,
+.svg-2,
+.svg-4,
+.svg-5 {
+  display: block;
+
+  width: 90px;
+  height: 90px;
+
+  fill: darkgrey;
+}
+
+.svg-1:hover,
+.svg-2:hover,
+.svg-4:hover,
+.svg-5:hover {
+  fill: black;
+}
+
+.filter-1 {
+  filter: grayscale(10);
+}
+
+.filter-2 {
+  filter: invert(20);
+}
+
+.filter-3 {
+  filter: saturate(0.5);
+}
+
+.filter-5 {
+  filter: sepia(10);
+}
+
+.filter-6 {
+  filter: hue-rotate(30deg);
+}
+
+.input-fil-1:checked ~ .image-cat .main-cat .cat-img {
+  filter: grayscale(10);
+}
+
+.input-fil-2:checked ~ .image-cat .main-cat .cat-img {
+  filter: invert(20);
+}
+
+.input-fil-3:checked ~ .image-cat .main-cat .cat-img {
+  filter: saturate(0.5);
+}
+.input-fil-5:checked ~ .image-cat .main-cat .cat-img {
+  filter: sepia(10);
+}
+.input-fil-6:checked ~ .image-cat .main-cat .cat-img {
+  filter: hue-rotate(30deg);
+}
+
+.input-fil-1:checked ~ .car .carsel .box .text-1 {
+  color: black;
+}
+.input-fil-2:checked ~ .car .carsel .box .text-2 {
+  color: black;
+}
+.input-fil-3:checked ~ .car .carsel .box .text-3 {
+  color: black;
+}
+.input-fil-4:checked ~ .car .carsel .box .text-4 {
+  color: black;
+}
+.input-fil-5:checked ~ .car .carsel .box .text-5 {
+  color: black;
+}
+.input-fil-6:checked ~ .car .carsel .box .text-6 {
+  color: black;
+}

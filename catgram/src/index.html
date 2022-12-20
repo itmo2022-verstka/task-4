@@ -6,6 +6,294 @@
     <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <!-- TODO -->
+  <svg display="none">
+    <defs>
+      <radialGradient id="RadialGradient2" cx="0.25" cy="0.25" r="0.25">
+        <stop offset="0%" stop-color="red" />
+        <stop offset="100%" stop-color="blue" />
+      </radialGradient>
+    </defs>
+    <symbol id="photo" viewBox="0 0 32 32">
+      <path d="M 8 5 C 6.355469 5 5 6.355469 5 8 L 5 24 C 5 25.644531 6.355469 27 8 27 L 24 27 C 25.644531 27 27 25.644531 27 24 L 27 8 C 27 6.355469 25.644531 5 24 5 Z M 21 8 L 24 8 L 24 11 L 21 11 Z M 16 12 C 18.222656 12 20 13.777344 20 16 C 20 18.222656 18.222656 20 16 20 C 13.777344 20 12 18.222656 12 16 C 12 13.777344 13.777344 12 16 12 Z M 7 14 L 10.34375 14 C 10.121094 14.625 10 15.300781 10 16 C 10 19.300781 12.699219 22 16 22 C 19.300781 22 22 19.300781 22 16 C 22 15.300781 21.878906 14.625 21.65625 14 L 25 14 L 25 24 C 25 24.566406 24.566406 25 24 25 L 8 25 C 7.433594 25 7 24.566406 7 24 Z"/>
+    </symbol>
+    <symbol id="svg-1" viewBox="0 0 24 24">
+      <g>
+        <path d="M23,0.6H1c-0.221,0-0.4,0.18-0.4,0.4v22c0,0.221,0.18,0.4,0.4,0.4h22c0.221,0,0.4-0.18,0.4-0.4V1
+		C23.4,0.779,23.221,0.6,23,0.6z M22.6,22.6H1.4V1.4H22.6V22.6z"/>
+        <path d="M16.6,3.8h3.6v3.559c0,0.221,0.18,0.399,0.4,0.399S21,7.579,21,7.358V3.4C21,3.18,20.82,3,20.6,3h-4
+		c-0.221,0-0.4,0.18-0.4,0.4S16.379,3.8,16.6,3.8z"/>
+        <path d="M3.4,21h4c0.221,0,0.4-0.178,0.4-0.398s-0.18-0.4-0.4-0.4h-3.6v-3.559c0-0.221-0.18-0.4-0.4-0.4s-0.4,0.18-0.4,0.4v3.959
+		C3,20.822,3.18,21,3.4,21z"/>
+        <path d="M3.4,7.758c0.221,0,0.4-0.179,0.4-0.399V3.8h3.6c0.221,0,0.4-0.179,0.4-0.399S7.621,3,7.4,3h-4C3.18,3,3,3.18,3,3.4v3.958
+		C3,7.579,3.18,7.758,3.4,7.758z"/>
+        <path d="M16.6,21h4c0.221,0,0.4-0.178,0.4-0.398v-3.959c0-0.221-0.18-0.4-0.4-0.4s-0.4,0.18-0.4,0.4v3.559h-3.6
+		c-0.221,0-0.4,0.18-0.4,0.4S16.379,21,16.6,21z"/>
+      </g>
+    </symbol>
+
+    <symbol id="svg-2" viewBox="0 0 64 64">
+      <g>
+        <rect x="16" width="4" height="2"/>
+        <rect x="22" width="4" height="2"/>
+        <rect x="28" width="4" height="2"/>
+        <rect x="4" width="4" height="2"/>
+        <rect x="10" width="4" height="2"/>
+        <rect x="48" y="62" width="4" height="2"/>
+        <rect x="62" y="32" width="2" height="4"/>
+        <rect x="46" width="4" height="2"/>
+        <rect x="62" y="44" width="2" height="4"/>
+        <rect x="62" y="26" width="2" height="4"/>
+        <rect x="52" width="4" height="2"/>
+        <rect y="6" width="2" height="4"/>
+        <rect width="2" height="4"/>
+        <rect y="24" width="2" height="4"/>
+        <rect x="62" y="50" width="2" height="4"/>
+        <rect x="42" y="62" width="4" height="2"/>
+        <rect x="62" y="56" width="2" height="4"/>
+        <rect y="12" width="2" height="4"/>
+        <rect y="18" width="2" height="4"/>
+        <rect x="60" y="62" width="4" height="2"/>
+        <rect x="62" y="38" width="2" height="4"/>
+        <rect x="54" y="62" width="4" height="2"/>
+        <rect x="62" y="14" width="2" height="4"/>
+        <rect x="62" y="20" width="2" height="4"/>
+        <rect x="40" width="4" height="2"/>
+        <rect x="58" width="4" height="2"/>
+        <rect x="62" y="2" width="2" height="4"/>
+        <rect x="62" y="8" width="2" height="4"/>
+        <rect x="36" y="62" width="4" height="2"/>
+        <rect x="34" width="4" height="2"/>
+        <path d="M32,32H0v32h32V32z M30,62H2V34h28V62z"/>
+        <polygon points="41.707,23.707 56,9.414 56,18 58,18 58,7 57,6 46,6 46,8 54.586,8 40.293,22.293 	"/>
+      </g>
+    </symbol>
+    <symbol id="svg-4" viewBox="0 0 35 35">
+      <path d="M17.505,34.727a17.227,17.227,0,1,1,15.859-23.9,1.25,1.25,0,0,1-2.3.969,14.727,14.727,0,1,0-7.873,19.282,1.25,1.25,0,0,1,.969,2.305A17.127,17.127,0,0,1,17.505,34.727Z"/><path d="M33.426,13.217h-.01l-9.788-.075a1.25,1.25,0,0,1,.009-2.5h.009l8.539.065.065-8.538A1.25,1.25,0,0,1,33.5.929h.009A1.249,1.249,0,0,1,34.75,2.188l-.074,9.788A1.251,1.251,0,0,1,33.426,13.217Z"/>
+    </symbol>
+    <symbol id="svg-5" viewBox="0 0 64 64">
+      <g>
+        <path d="M0,14.586v44.828L22.414,37L0,14.586z M2,19.414L19.586,37L2,54.586V19.414z"/>
+        <polygon points="64,55 62.414,55 62.293,54.879 62.172,55 62,55 62,55.172 60.879,56.293 64,59.414 	"/>
+        <rect x="62" y="38" width="2" height="4"/>
+        <rect x="62" y="44" width="2" height="3"/>
+        <rect x="62" y="32" width="2" height="4"/>
+        <rect x="62" y="49" width="2" height="4"/>
+        <rect x="62" y="27" width="2" height="3"/>
+        <rect x="62" y="21" width="2" height="4"/>
+        <polygon points="64,14.586 60.879,17.707 62,18.828 62,19 62.172,19 62.293,19.121 62.414,19 64,19 	"/>
+        <rect x="50.019" y="27.114" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 66.6011 85.55)" width="2" height="3.736"/>
+        <rect x="57.944" y="19.188" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 85.7345 77.6247)" width="2" height="3.736"/>
+        <rect x="46.056" y="31.076" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 57.0339 89.5129)" width="2" height="3.736"/>
+        <rect x="53.981" y="23.151" transform="matrix(0.7071 0.7071 -0.7071 0.7071 33.7947 -31.5495)" width="2" height="3.736"/>
+        <polygon points="41.586,37 43.707,39.121 45.121,37.707 44.414,37 45.121,36.293 43.707,34.879 	"/>
+        <rect x="53.982" y="47.114" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -18.5314 53.2241)" width="2" height="3.736"/>
+        <rect x="57.944" y="51.076" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.1729 57.187)" width="2" height="3.736"/>
+        <rect x="49.151" y="44.019" transform="matrix(0.7071 0.7071 -0.7071 0.7071 46.7764 -22.8901)" width="3.736" height="2"/>
+        <rect x="45.188" y="40.056" transform="matrix(0.7071 0.7071 -0.7071 0.7071 42.8135 -21.2487)" width="3.736" height="2"/>
+        <rect x="31" y="59" width="2" height="2"/>
+        <rect x="31" y="41" width="2" height="4"/>
+        <rect x="31" y="29" width="2" height="4"/>
+        <rect x="31" y="35" width="2" height="4"/>
+        <rect x="31" y="47" width="2" height="4"/>
+        <rect x="31" y="53" width="2" height="4"/>
+        <rect x="31" y="17" width="2" height="4"/>
+        <rect x="31" y="23" width="2" height="4"/>
+        <rect x="31" y="13" width="2" height="2"/>
+        <path d="M56,10.151C50.245,3.588,41.839,0,32,0C21.075,0,11.907,4.41,6.187,12.419l1.627,1.162C13.149,6.113,21.738,2,32,2
+		c9.509,0,17.577,3.538,22.957,10H46v2h11l1-1V2h-2V10.151z"/>
+      </g>
+    </symbol>
+    <symbol id="svg-3" viewBox="0 0 64 64">
+      <g clip-path="url(#clip0_1_2)" filter="url(#filter0_d_1_2)">
+        <path d="M41 23C41 21.896 40.104 21 39 21H33C31.896 21 31 21.896 31 23V24H41V23ZM48 26H24C22.896 26 22 26.896 22 28V40C22 41.104 22.896 42 24 42H48C49.104 42 50 41.104 50 40V28C50 26.896 49.104 26 48 26ZM36 40C32.687 40 30 37.312 30 34C30 30.687 32.687 28 36 28C39.312 28 42 30.687 42 34C42 37.312 39.312 40 36 40ZM47 30C46.448 30 46 29.553 46 29C46 28.448 46.448 28 47 28C47.553 28 48 28.448 48 29C48 29.553 47.553 30 47 30ZM36 30C33.791 30 32 31.791 32 34C32 36.209 33.791 38 36 38C38.209 38 40 36.209 40 34C40 31.791 38.209 30 36 30ZM36 0C18.327 0 4 14.327 4 32C4 49.674 18.327 64 36 64C53.673 64 68 49.674 68 32C68 14.327 53.673 0 36 0ZM52 40C52 42.209 50.209 44 48 44H24C21.791 44 20 42.209 20 40V28C20 25.791 21.791 24 24 24H29V23C29 20.791 30.791 19 33 19H39C41.209 19 43 20.791 43 23V24H48C50.209 24 52 25.791 52 28V40Z" fill="url(#paint0_linear_1_2)"/>
+      </g>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 100 100">
+      <polygon points="47.5 20 47.5 35 62.5 50 47.5 65 47.5 80 77.5 50 47.5 20"/><polygon points="22.5 20 22.5 35 37.5 50 22.5 65 22.5 80 52.5 50 22.5 20"/>
+    </symbol>
+  </svg>
+    <main>
+      <input type="radio" name="2" id="scaling4" class="scaling4">
+      <input type="radio" name="2" id="scaling3" class="scaling3">
+      <input type="radio" name="2" id="scaling2" class="scaling2">
+      <input type="radio" name="2" id="scaling1" class="scaling1">
+      <input type="radio" name="1" id="rotate4" class="rotate4">
+      <input type="radio" name="1" id="rotate3" class="rotate3">
+      <input type="radio" name="1" id="rotate2" class="rotate2">
+      <input type="radio" name="1" id="rotate1" class="rotate1">
+      <input type="checkbox" id="another" class="another">
+      <input type="checkbox" id="scale" class="scale">
+      <input type="checkbox" id="squere" class="squere">
+      <header>
+        <div class="icons">
+          <div class="icon">
+            <label for="squere" class="squere">
+              <svg class="svg-1">
+                <use xlink:href="#svg-1"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="icon">
+            <label for="scaling1" class="label-scaling1">
+              <svg class="svg-2">
+                <use xlink:href="#svg-2"></use>
+              </svg>
+            </label>
+            <label for="scaling2" class="label-scaling2">
+              <svg class="svg-2">
+                <use xlink:href="#svg-2"></use>
+              </svg>
+            </label>
+            <label for="scaling3" class="label-scaling3">
+              <svg class="svg-2">
+                <use xlink:href="#svg-2"></use>
+              </svg>
+            </label>
+            <label for="scaling4" class="label-scaling4">
+              <svg class="svg-2">
+                <use xlink:href="#svg-2"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="icon">
+            <label for="another" class="label-another">
+              <svg class="svg-z" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2)" filter="url(#filter0_d_1_2)">
+                  <path d="M41 23C41 21.896 40.104 21 39 21H33C31.896 21 31 21.896 31 23V24H41V23ZM48 26H24C22.896 26 22 26.896 22 28V40C22 41.104 22.896 42 24 42H48C49.104 42 50 41.104 50 40V28C50 26.896 49.104 26 48 26ZM36 40C32.687 40 30 37.312 30 34C30 30.687 32.687 28 36 28C39.312 28 42 30.687 42 34C42 37.312 39.312 40 36 40ZM47 30C46.448 30 46 29.553 46 29C46 28.448 46.448 28 47 28C47.553 28 48 28.448 48 29C48 29.553 47.553 30 47 30ZM36 30C33.791 30 32 31.791 32 34C32 36.209 33.791 38 36 38C38.209 38 40 36.209 40 34C40 31.791 38.209 30 36 30ZM36 0C18.327 0 4 14.327 4 32C4 49.674 18.327 64 36 64C53.673 64 68 49.674 68 32C68 14.327 53.673 0 36 0ZM52 40C52 42.209 50.209 44 48 44H24C21.791 44 20 42.209 20 40V28C20 25.791 21.791 24 24 24H29V23C29 20.791 30.791 19 33 19H39C41.209 19 43 20.791 43 23V24H48C50.209 24 52 25.791 52 28V40Z" fill="url(#paint0_linear_1_2)"/>
+                </g>
+                <defs>
+                  <filter id="filter0_d_1_2" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="4"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+                  </filter>
+                  <linearGradient id="paint0_linear_1_2" x1="45" y1="4.28408e-08" x2="36" y2="64" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FAE100"/>
+                    <stop offset="1" stop-color="#FD0330"/>
+                  </linearGradient>
+                  <clipPath id="clip0_1_2">
+                    <rect width="64" height="64" fill="white" transform="translate(4)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </label>
+          </div>
+          <div class="icon">
+            <label for="rotate1" class="label-rotate1">
+              <svg class="svg-4">
+                <use xlink:href="#svg-4"></use>
+              </svg>
+            </label>
+            <label for="rotate2" class="label-rotate2">
+              <svg class="svg-4">
+                <use xlink:href="#svg-4"></use>
+              </svg>
+            </label>
+            <label for="rotate3" class="label-rotate3">
+              <svg class="svg-4">
+                <use xlink:href="#svg-4"></use>
+              </svg>
+            </label>
+            <label for="rotate4" class="label-rotate4">
+              <svg class="svg-4">
+                <use xlink:href="#svg-4"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="icon">
+            <label for="scale" class="label-scale">
+              <svg class="svg-5">
+                <use xlink:href="#svg-5"></use>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </header>
+      <input type="radio" name="4" id="input-fil-1" class="input-fil-1">
+      <input type="radio" name="4" id="input-fil-2" class="input-fil-2">
+      <input type="radio" name="4" id="input-fil-3" class="input-fil-3">
+      <input checked type="radio" name="4" id="input-fil-4" class="input-fil-4">
+      <input type="radio" name="4" id="input-fil-5" class="input-fil-5">
+      <input type="radio" name="4" id="input-fil-6" class="input-fil-6">
+      <div class="image-cat">
+        <div class="main-cat">
+          <img class="cat-img" src="img/cat.jpg" alt="Фото кота">
+        </div>
+      </div>
+      <div class="image-cat-another">
+        <div class="another-cat">
+          <img class="cat-img" src="img/cat.jpg" alt="Фото кота">
+        </div>
+      </div>
+      <input type="radio" name="3" id="right1" class="right1">
+      <input type="radio" name="3" id="right2" class="right2">
+      <input type="radio" name="3" id="right3" class="right3">
+      <input checked type="radio" name="3" id="right4" class="right4">
+      <label for="right1" class="label-right1">
+        <svg class="left-arrow">
+          <use xlink:href="#arrow"></use>
+        </svg>
+      </label>
+      <label for="right2" class="label-right2">
+        <svg class="left-arrow">
+          <use xlink:href="#arrow"></use>
+        </svg>
+      </label>
+      <label for="right3" class="label-right3">
+        <svg class="right-arrow">
+          <use xlink:href="#arrow"></use>
+        </svg>
+      </label>
+      <label for="right4" class="label-right4">
+        <svg class="right-arrow">
+          <use xlink:href="#arrow"></use>
+        </svg>
+      </label>
+      <div class="car">
+        <div class="carsel">
+          <div class="box">
+            <p class="text text-1">Serii</p>
+            <label class="filter filter-1" for="input-fil-1">
+              <img class="cat cat-img1" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+          <div class="box">
+            <p class="text text-2">Negev</p>
+            <label class="filter filter-2" for="input-fil-2">
+              <img class="cat cat-img2" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+          <div class="box">
+            <p class="text text-3">Depresion</p>
+            <label class="filter filter-3" for="input-fil-3">
+              <img class="cat cat-img3" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+          <div class="box">
+            <p class="text text-4">No filter</p>
+            <label class="filter filter-4" for="input-fil-4">
+              <img class="cat cat-img4" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+          <div class="box">
+            <p class="text text-5">Mocha</p>
+            <label class="filter filter-5" for="input-fil-5">
+              <img class="cat cat-img5" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+          <div class="box">
+            <p class="text text-6">Green</p>
+            <label class="filter filter-6" for="input-fil-6">
+              <img class="cat cat-img6" src="img/cat.jpg" alt="Фото кота">
+            </label>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
