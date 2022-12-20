@@ -1,1 +1,342 @@
-/* TODO */
+:root {
+  --img_height: 500px; /*667*/
+  --pic_height: 500px;
+  --const_width: 500px;
+  font-family: Broadway, serif;
+}
+
+html { box-sizing: border-box }
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: .5em;
+}
+
+.sprite {
+  width: fit-content;
+  margin: auto;
+}
+
+.picture {
+  width: var(--const_width);
+  height: var(--pic_height);
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.catimg {
+  width: var(--const_width);
+  height: var(--img_height);
+  object-fit:cover;
+  position: absolute;
+  visibility: hidden;
+  margin: auto;
+}
+
+.cat2,
+.slide2 {
+  filter: sepia(70%);
+}
+
+.cat3,
+.slide3 {
+  filter: hue-rotate(180deg);
+}
+
+.cat4,
+.slide4 {
+  filter: grayscale(100%);
+}
+
+.cat5,
+.slide5 img {
+  filter: blur(2px);
+}
+
+.cat6,
+.slide6 img {
+  filter: drop-shadow(5px 5px 10px red) invert(75%);
+}
+
+.filters {
+  width: 606px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.footer {
+  margin: auto;
+  width: fit-content;
+}
+
+.left,
+.filters,
+.right {
+  display: inline-block;
+}
+
+.left,
+.right {
+  visibility: hidden;
+  position: absolute;
+  font-size: 4rem;
+}
+
+.left {
+  left: calc((100% - 606px) / 2 - 40px);
+}
+
+.right {
+  right: calc((100% - 606px) / 2 - 40px);
+}
+
+.slider {
+  width: 0;
+  position: relative;
+}
+
+.slider label {
+  height: inherit;
+}
+
+.slides {
+  height: fit-content;
+  width: fit-content;
+  display: inline;
+  text-align: center;
+  z-index: 0;
+  -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  -moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  -o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slides {
+  position: absolute;
+}
+
+.slides img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.slides .name {
+  visibility: visible;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  bottom: 60%;
+  z-index: 1;
+}
+
+.slide1 {
+  margin-left: 0;
+}
+
+.slide2 {
+  margin-left: 152px;
+}
+
+.slide3 {
+  margin-left: 304px;
+}
+
+.slide4 {
+  margin-left: 456px;
+}
+
+.slide5 {
+  margin-left: 608px;
+}
+
+.slide6 {
+  margin-left: 760px;
+}
+
+:checked {
+  opacity: 1;
+}
+
+#slide1:checked ~ .footer .filters .slider .slide1 .name,
+#slide2:checked ~ .footer .filters .slider .slide2 .name,
+#slide3:checked ~ .footer .filters .slider .slide3 .name,
+#slide4:checked ~ .footer .filters .slider .slide4 .name,
+#slide5:checked ~ .footer .filters .slider .slide5 .name,
+#slide6:checked ~ .footer .filters .slider .slide6 .name {
+  font-weight: bold;
+}
+
+#slide5:checked ~ .footer .filters .slider {
+  transform: translate(-152px)
+}
+
+#slide6:checked ~ .footer .filters .slider {
+  transform: translate(-304px)
+}
+
+:checked ~ .footer .filters .slider {
+  transition: all 2s ease-in-out;
+}
+
+#slide1:checked ~ .picture .cat1,
+#slide2:checked ~ .picture .cat2,
+#slide3:checked ~ .picture .cat3,
+#slide4:checked ~ .picture .cat4,
+#slide5:checked ~ .picture .cat5,
+#slide6:checked ~ .picture .cat6 {
+  visibility: visible;
+}
+
+#slide1:checked ~ .footer .left,
+#slide6:checked ~ .footer .right {
+  opacity: 0.3;
+}
+
+#slide1:checked ~ .footer .l1,
+#slide1:checked ~ .footer .r1,
+#slide2:checked ~ .footer .l2,
+#slide2:checked ~ .footer .r2,
+#slide3:checked ~ .footer .l3,
+#slide3:checked ~ .footer .r3,
+#slide4:checked ~ .footer .l4,
+#slide4:checked ~ .footer .r4,
+#slide5:checked ~ .footer .l5,
+#slide5:checked ~ .footer .r5,
+#slide6:checked ~ .footer .l6,
+#slide6:checked ~ .footer .r6 {
+  visibility: visible;
+}
+
+input {
+  display: none;
+}
+
+.sq,
+.size,
+.rot,
+.mir,
+.res {
+  visibility: hidden;
+}
+
+.squared,
+.size2,
+.size3,
+.size4,
+.r_left,
+.r_down,
+.r_right,
+.mirrored,
+.norm {
+  margin-left: calc(-74px - 1em);
+}
+
+#not_squared:checked ~ .picture {
+  --pic_height: var(--img_height);
+}
+
+#not_squared:checked ~ .sprite .squared,
+#squared:checked ~ .sprite .not_squared {
+  visibility: visible;
+}
+
+#size2:checked ~ .picture .catimg,
+#size3:checked ~ .picture .catimg,
+#size4:checked ~ .picture .catimg {
+  transform: scale(1.2);
+}
+
+#size2:checked ~ .picture {
+  --img_height: 600px;
+}
+
+#size3:checked ~ .picture {
+  --img_height: 720px;
+}
+
+#size4:checked ~ .picture {
+  --img_height: 864px;
+}
+
+#size1:checked ~ .sprite .size2,
+#size2:checked ~ .sprite .size3,
+#size3:checked ~ .sprite .size4,
+#size4:checked ~ .sprite .size1 {
+  visibility: visible;
+}
+
+#left:checked ~ .picture,
+#left:checked ~ .footer .filters .slider .slides img {
+  transform: rotate(-90deg);
+}
+
+#down:checked ~ .picture,
+#down:checked ~ .footer .filters .slider .slides img {
+  transform: rotate(-180deg);
+}
+
+#right:checked ~ .picture,
+#right:checked ~ .footer .filters .slider .slides img {
+  transform: rotate(-270deg);
+}
+
+#up:checked ~ .picture,
+#up:checked ~ .footer .filters .slider .slides img {
+  transform: rotate(0);
+}
+
+:checked ~ .picture {
+  transition: all 2s ease-in-out;
+}
+
+#up:checked ~ .sprite .r_left,
+#left:checked ~ .sprite .r_down,
+#down:checked ~ .sprite .r_right,
+#right:checked ~ .sprite .r_up {
+  visibility: visible;
+}
+
+#mirrored:checked ~ .picture,
+#mirrored:checked ~ .footer .filters .slider .slides img {
+  transform: rotateY(180deg);
+}
+
+#not_mirrored:checked ~ .sprite .mirrored,
+#mirrored:checked ~ .sprite .not_mirrored {
+  visibility: visible;
+}
+
+#logo:checked ~ .picture {
+  --pic_height: var(--const_width);
+  --img_height: var(--const_width);
+  transform: revert;
+}
+
+#logo:checked ~ .picture,
+#logo:checked ~ .picture .catimg,
+#logo:checked ~ .footer .filters .slider .slides img {
+  transform: revert;
+}
+
+#logo:checked ~ .sprite .norm,
+#norm:checked ~ .sprite .logo {
+  visibility: visible;
+}
+
+#logo:checked ~ .picture {
+  --pic_height: var(--const_width);
+  --img_height: var(--const_width);
+}
+
+#logo:checked ~ .picture .cat1 {
+  visibility: visible;
+  z-index: 2;
+}
+
+#logo:checked ~ .sprite .norm .icon {
+  background-color: chartreuse;
+}
