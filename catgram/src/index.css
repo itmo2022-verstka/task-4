@@ -1,1 +1,363 @@
-/* TODO */
+.svg {
+  position: fixed;
+}
+
+.main {
+  margin: 20px auto;
+  width: 550px;
+  height: auto;
+}
+
+.button-svg {
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.menu-wrapper {
+  width: 550px;
+  height: 65px;
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.menu-label {
+  position: relative;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+  margin: 10px;
+}
+
+.menu-label:hover {
+  cursor: pointer;
+  animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.input,
+.filter-arrow,
+.menu-label-radio {
+  display: none;
+}
+
+.fill-input:checked ~ .menu-wrapper .menu-label-fill {
+  transform: scale(1.2);
+}
+
+.scale-x2-input:checked ~ .menu-wrapper .menu-label-scale-x3 {
+  transform: scale(1.05);
+}
+
+.scale-x3-input:checked ~ .menu-wrapper .menu-label-scale-x4 {
+  transform: scale(1.1);
+}
+
+.scale-x4-input:checked ~ .menu-wrapper .menu-label-scale-x1 {
+  transform: scale(1.15);
+}
+
+.rotate-90-input:checked ~ .menu-wrapper .menu-label-rotate-180 {
+  transform: scale(1.05);
+}
+
+.rotate-180-input:checked ~ .menu-wrapper .menu-label-rotate-270 {
+  transform: scale(1.1);
+}
+
+.rotate-270-input:checked ~ .menu-wrapper .menu-label-rotate-0 {
+  transform: scale(1.15);
+}
+
+.logo-input:checked ~ .menu-wrapper .menu-label-logo {
+  transform: scale(1.2);
+}
+
+.flip-input:checked ~ .menu-wrapper .menu-label-flip {
+  transform: scale(1.2);
+}
+
+.scale-x2-input:checked ~ .image-wrapper .image-picture-scale {
+  transform: scale(1.2);
+}
+
+.scale-x3-input:checked ~ .image-wrapper .image-picture-scale {
+  transform: scale(1.4);
+}
+
+.scale-x4-input:checked ~ .image-wrapper .image-picture-scale {
+  transform: scale(1.6);
+}
+
+.flip-input:checked ~ .image-wrapper .image-picture-flip {
+  transform: scaleX(-1);
+}
+
+.fill-input:checked ~ .image-wrapper .image-picture .image-picture-rotate {
+  width: 100%;
+  height: 100%;
+}
+
+.rotate-0-input:checked ~ .image-wrapper .image-picture .image-picture-rotate {
+  animation: rot 1s;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-90-input:checked ~ .image-wrapper .image-picture-rotate {
+  transform: rotate(0.25turn);
+}
+
+.rotate-180-input:checked ~ .image-wrapper .image-picture-rotate {
+  transform: rotate(0.5turn);
+}
+
+.rotate-270-input:checked ~ .image-wrapper .image-picture-rotate {
+  transform: rotate(0.75turn);
+}
+
+.logo-input:checked ~ .image-wrapper {
+  display: flex;
+  overflow: unset;
+  width: 710px;
+  height: 710px;
+  margin-left: -65px;
+}
+
+.image-picture-original {
+  display: none;
+}
+
+.logo-input:checked ~ .image-wrapper .image-picture-flip {
+  display: none;
+}
+
+.logo-input:checked ~ .image-wrapper .image-picture-original {
+  display: block;
+}
+
+.image-wrapper {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 550px;
+  height: auto;
+  max-height: 600px;
+  transition: all 0.8s ease-in-out;
+}
+
+.image-picture {
+  display: block;
+}
+
+.image-picture,
+.image-picture-original,
+.image-picture-filter,
+.filter-label {
+  user-select: none;
+}
+
+.image-wrapper,
+.image-picture-rotate,
+.image-picture-scale,
+.image-picture-flip,
+.image-picture-original {
+  transition: all 0.8s ease-in-out;
+}
+
+.filter-label-wrapper {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(4, 120px);
+  grid-column-gap: 24px;
+}
+
+.image-picture-filter {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.image-picture-filter:hover,
+.filter-arrow-active:hover {
+  cursor: pointer;
+}
+
+.image-picture-filter-peter {
+  filter: grayscale(100%);
+}
+
+.image-picture-filter-yalta {
+  filter: sepia(50%) saturate(110%);
+}
+
+.image-picture-filter-ural-summer {
+  filter: hue-rotate(195deg);
+}
+
+.image-picture-filter-jungle {
+  filter: hue-rotate(70deg) brightness(80%);
+}
+
+.image-picture-filter-contrast {
+  filter: contrast(1.5);
+  mix-blend-mode: luminosity;
+}
+
+.image-picture-filter-blur {
+  filter: blur(5px);
+}
+
+.filter-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.filter-none-input:checked ~ .image-wrapper .image-picture-flip {
+  filter: none;
+}
+
+.filter-peter-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-peter 1s linear forwards;
+}
+
+.filter-yalta-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-yalta 1s linear forwards;
+}
+
+.filter-ural-summer-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-ural-summer 1s linear forwards;
+}
+
+.filter-jungle-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-jungle 1s linear forwards;
+}
+
+.filter-contrast-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-contrast 1s linear forwards;
+}
+
+.filter-blur-input:checked ~ .image-wrapper .image-picture-flip {
+  animation: filter-blur 1s linear forwards;
+}
+
+@keyframes filter-peter {
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+@keyframes filter-yalta {
+  100% {
+    filter: sepia(50%) saturate(110%);
+  }
+}
+
+@keyframes filter-ural-summer {
+  100% {
+    filter: hue-rotate(195deg);
+  }
+}
+
+@keyframes filter-jungle {
+  100% {
+    filter: hue-rotate(70deg) brightness(80%);
+  }
+}
+
+@keyframes filter-contrast {
+  100% {
+    filter: contrast(1.2);
+    mix-blend-mode: luminosity;
+  }
+}
+
+@keyframes filter-blur {
+  100% {
+    filter: blur(5px);
+  }
+}
+
+.filter-none-input:checked ~ .filter-wrapper .filter-none-label,
+.filter-peter-input:checked ~ .filter-wrapper .filter-peter-label,
+.filter-yalta-input:checked ~ .filter-wrapper .filter-yalta-label,
+.filter-ural-summer-input:checked ~ .filter-wrapper .filter-ural-summer-label,
+.filter-jungle-input:checked ~ .filter-wrapper .filter-jungle-label,
+.filter-contrast-input:checked ~ .filter-wrapper .filter-contrast-label,
+.filter-blur-input:checked ~ .filter-wrapper .filter-blur-label {
+  font-weight: bold;
+}
+
+.filter-label {
+  display: none;
+  font-weight: normal;
+  text-align: center;
+}
+
+.filter-arrow-left {
+  position: absolute;
+  top: 30%;
+  left: -11%;
+  transform: rotate(90deg);
+}
+
+.filter-arrow-right {
+  position: absolute;
+  top: 30%;
+  left: 102%;
+  transform: rotate(-90deg);
+}
+
+.filter-arrow-inactive {
+  opacity: 0.5;
+}
+
+.scale-x1-input:checked ~ .menu-wrapper .menu-label-scale-x2,
+.scale-x2-input:checked ~ .menu-wrapper .menu-label-scale-x3,
+.scale-x3-input:checked ~ .menu-wrapper .menu-label-scale-x4,
+.scale-x4-input:checked ~ .menu-wrapper .menu-label-scale-x1,
+.rotate-0-input:checked ~ .menu-wrapper .menu-label-rotate-90,
+.rotate-90-input:checked ~ .menu-wrapper .menu-label-rotate-180,
+.rotate-180-input:checked ~ .menu-wrapper .menu-label-rotate-270,
+.rotate-270-input:checked ~ .menu-wrapper .menu-label-rotate-0,
+.arrow-1-input:checked ~ .filter-wrapper .filter-arrow-left-inactive,
+.arrow-2-input:checked ~ .filter-wrapper .filter-arrow-left-1,
+.arrow-3-input:checked ~ .filter-wrapper .filter-arrow-left-2,
+.arrow-4-input:checked ~ .filter-wrapper .filter-arrow-left-3,
+.arrow-1-input:checked ~ .filter-wrapper .filter-arrow-right-2,
+.arrow-2-input:checked ~ .filter-wrapper .filter-arrow-right-3,
+.arrow-3-input:checked ~ .filter-wrapper .filter-arrow-right-4,
+.arrow-4-input:checked ~ .filter-wrapper .filter-arrow-right-inactive,
+.arrow-1-input:checked ~ .filter-wrapper .filter-label-none,
+.arrow-1-input:checked ~ .filter-wrapper .filter-label-peter,
+.arrow-1-input:checked ~ .filter-wrapper .filter-label-yalta,
+.arrow-1-input:checked ~ .filter-wrapper .filter-label-ural-summer,
+.arrow-2-input:checked ~ .filter-wrapper .filter-label-peter,
+.arrow-2-input:checked ~ .filter-wrapper .filter-label-yalta,
+.arrow-2-input:checked ~ .filter-wrapper .filter-label-ural-summer,
+.arrow-2-input:checked ~ .filter-wrapper .filter-label-jungle,
+.arrow-3-input:checked ~ .filter-wrapper .filter-label-yalta,
+.arrow-3-input:checked ~ .filter-wrapper .filter-label-ural-summer,
+.arrow-3-input:checked ~ .filter-wrapper .filter-label-jungle,
+.arrow-3-input:checked ~ .filter-wrapper .filter-label-contrast,
+.arrow-4-input:checked ~ .filter-wrapper .filter-label-ural-summer,
+.arrow-4-input:checked ~ .filter-wrapper .filter-label-jungle,
+.arrow-4-input:checked ~ .filter-wrapper .filter-label-contrast,
+.arrow-4-input:checked ~ .filter-wrapper .filter-label-blur {
+  display: block;
+}
