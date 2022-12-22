@@ -1,1 +1,282 @@
-/* TODO */
+.page {
+  width: 600px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sprite {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0.5em;
+}
+
+.main-icon {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.main-img {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 540px;
+  height: 540px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  transition: 1s all linear;
+}
+
+.img-default {
+  position: absolute;
+  top: 20%;
+
+  overflow: hidden;
+
+  width: 540px;
+  height: 350px;
+
+  animation: hide 1s forwards;
+}
+
+.img-default img {
+  width: 100%;
+}
+
+.img-rotate {
+  position: relative;
+
+  transition: 1s all linear;
+}
+
+.img-square {
+  position: absolute;
+  top: 20%;
+
+  overflow: hidden;
+
+  width: 540px;
+  height: 350px;
+
+  transition: 1s all linear;
+}
+
+.img-rotate,
+.img-zoom,
+.img-flip,
+.img-container {
+  width: 100%;
+  height: 100%;
+
+  transition: 1s all linear;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+.box-zoom-0:checked ~ .sprite .zoom-1,
+.box-zoom-1:checked ~ .sprite .zoom-2,
+.box-zoom-2:checked ~ .sprite .zoom-3,
+.box-zoom-3:checked ~ .sprite .zoom-0 {
+  display: block;
+}
+
+.box-zoom-1:checked ~ .main-img .img-rotate .img-square .img-zoom {
+  transform: scale(1.2);
+}
+
+.box-zoom-2:checked ~ .main-img .img-rotate .img-square .img-zoom {
+  transform: scale(1.5);
+}
+
+.box-zoom-3:checked ~ .main-img .img-rotate .img-square .img-zoom {
+  transform: scale(2);
+}
+
+.box-zoom-0:checked ~ .main-img .img-rotate .img-square .img-zoom {
+  transform: scale(1);
+}
+
+.box-rotate-90:checked ~ .main-img .img-rotate {
+  transform: rotate(-90deg);
+}
+
+.box-rotate-180:checked ~ .main-img .img-rotate {
+  transform: rotate(-180deg);
+}
+
+.box-rotate-270:checked ~ .main-img .img-rotate {
+  transform: rotate(-270deg);
+}
+
+.box-rotate-0:checked ~ .main-img .img-rotate {
+  animation: rotate0 1s;
+}
+
+@keyframes rotate0 {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.box-rotate-90:checked ~ .sprite .rotate-180,
+.box-rotate-180:checked ~ .sprite .rotate-270,
+.box-rotate-270:checked ~ .sprite .rotate-0,
+.box-rotate-0:checked ~ .sprite .rotate-90 {
+  display: block;
+}
+
+.checkbox-square:checked ~ .main-img .img-rotate .img-square {
+  top: 0;
+
+  height: 540px;
+}
+
+.checkbox-flip:checked ~ .main-img .img-rotate .img-square .img-zoom .img-flip {
+  transform: scale(-1, 1);
+}
+
+.checkbox-default:checked ~ .main-img .img-rotate {
+  animation: hide 1s forwards;
+}
+
+.checkbox-default:checked ~ .main-img .img-default {
+  animation: show 1s forwards;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.filter-panel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow {
+  width: 40px;
+  height: 50px;
+
+  margin-top: 80px;
+
+  opacity: 0.2;
+}
+
+.right-arrow {
+  margin-right: 25px;
+}
+
+.left-arrow {
+  margin-left: 25px;
+
+  transform: scale(-1, 1);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+
+  width: 80%;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 23%;
+
+  margin-top: 20px;
+}
+
+.filter-name {
+  color: gray;
+
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.filter-img {
+  width: 100%;
+
+  margin-top: 10px;
+
+  aspect-ratio: 1/1;
+
+  background-image: url('./img/cat.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.spb .filter-img {
+  filter: grayscale(0.8);
+}
+
+.yalta .filter-img {
+  filter: sepia(0.5);
+}
+
+.ural .filter-img {
+  filter: invert(1);
+}
+
+.box-filter-default:checked ~ .main-img {
+  filter: none;
+}
+
+.box-filter-default:checked ~ .filters .default .filter-name,
+.box-filter-spb:checked ~ .filters .spb .filter-name,
+.box-filter-yalta:checked ~ .filters .yalta .filter-name,
+.box-filter-ural:checked ~ .filters .ural .filter-name {
+  color: black;
+
+  font-weight: bolder;
+}
+
+.box-filter-spb:checked ~ .main-img .img-rotate {
+  filter: grayscale(0.8);
+}
+
+.box-filter-yalta:checked ~ .main-img .img-rotate {
+  filter: sepia(0.5);
+}
+
+.box-filter-ural:checked ~ .main-img .img-rotate {
+  filter: invert(1);
+}
