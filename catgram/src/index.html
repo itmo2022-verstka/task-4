@@ -1,11 +1,249 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>01-about-cats</title>
-    <link rel="stylesheet" href="./index.css">
-  </head>
-  <body>
-    <!-- TODO -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>01-about-cats</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="wrapper">
+  <input type="checkbox" id="crop" class="crop hidden"/>
+
+  <input type="radio" id="zoom1" class="zoom1 hidden" name="zoom" checked/>
+  <input type="radio" id="zoom1.1" class="zoom1.1 hidden" name="zoom"/>
+  <input type="radio" id="zoom1.5" class="zoom1.5 hidden" name="zoom"/>
+  <input type="radio" id="zoom1.7" class="zoom1.7 hidden" name="zoom"/>
+
+
+  <input type="checkbox" id="close" class="close hidden"/>
+
+  <input type="radio" id="rot0" class="rot0 hidden" checked name="rot"/>
+  <input type="radio" id="rot90" class="rot90 hidden" name="rot"/>
+  <input type="radio" id="rot180" class="rot180 hidden" name="rot"/>
+  <input type="radio" id="rot270" class="rot270 hidden" name="rot"/>
+
+  <input type="checkbox" id="refl" class="refl-ch hidden"/>
+
+  <input type="radio" id="f-default" class="filter hidden" name="filter" checked/>
+  <input type="radio" id="f-2" class="filter " name="filter"/>
+  <input type="radio" id="f-3" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-4" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-5" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-6" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-7" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-8" class="filter hidden" name="filter"/>
+  <input type="radio" id="f-9" class="filter hidden" name="filter"/>
+
+  <input type="radio" id="left1-5" class="left hidden" name="left" checked/>
+  <input type="radio" id="left2-6" class="left hidden" name="left"/>
+  <input type="radio" id="left3-7" class="left hidden" name="left"/>
+  <input type="radio" id="left4-8" class="left hidden" name="left"/>
+  <input type="radio" id="left5-9" class="left hidden" name="left"/>
+
+
+  <div class="controls">
+    <label for="crop" id="crop-btn">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-4"></use>
+      </svg>
+    </label>
+
+    <div class="zoom-btn">
+      <label for="zoom1" id="zoom1-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-3"></use>
+        </svg>
+      </label>
+      <label for="zoom1.1" id="zoom1.1-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-3"></use>
+        </svg>
+      </label>
+      <label for="zoom1.5" id="zoom1.5-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-3"></use>
+        </svg>
+      </label>
+      <label for="zoom1.7" id="zoom1.7-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-3"></use>
+        </svg>
+      </label>
+    </div>
+    <label for="close" id="close-btn">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-7"></use>
+      </svg>
+    </label>
+
+    <div class="rot-btn">
+      <label for="rot0" id="rot0-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-5"></use>
+        </svg>
+      </label>
+      <label for="rot90" id="rot90-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-5"></use>
+        </svg>
+      </label>
+      <label for="rot180" id="rot180-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-5"></use>
+        </svg>
+      </label>
+      <label for="rot270" id="rot270-btn" class="hidden">
+        <svg height="100" width="100">
+          <use xlink:href="./sprite.svg#src-5"></use>
+        </svg>
+      </label>
+    </div>
+    <label for="refl" id="refl-btn">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-6"></use>
+      </svg>
+    </label>
+
+  </div>
+  <div class="img-wrapper">
+    <div class="rot">
+      <div class="zoom">
+        <div class="refl">
+          <div class="crop-div">
+            <img src="Screenshot%20from%202023-01-03%2000-15-21.png" alt="pic">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filters-container">
+    <div class="hidden disableL">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </div>
+    <label for="left1-5" id="left1-5-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </label>
+    <label for="left2-6" id="left2-6-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </label>
+    <label for="left3-7" id="left3-7-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </label>
+    <label for="left4-8" id="left4-8-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </label>
+    <label for="left5-9" id="left5-9-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-2"></use>
+      </svg>
+    </label>
+
+    <div class="filters">
+      <label for="f-default" class="filter f-default">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+      </label>
+      <label for="f-2" class="filter f-2">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-3" class="filter f-3">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-4" class="filter f-4">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-5" class="filter f-5">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-6" class="filter f-6">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-7" class="filter f-7">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-8" class="filter f-8">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+      <label for="f-9" class="filter f-9">
+        <span class="text">Без фильтра</span>
+        <img class="filter-image filter-image_empty"
+             src="Screenshot%20from%202023-01-03%2000-15-21.png"
+             alt="coby selfie">
+
+      </label>
+    </div>
+    <label for="left1-5" id="right1-5-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </label>
+    <label for="left2-6" id="right2-6-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </label>
+    <label for="left3-7" id="right3-7-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </label>
+    <label for="left4-8" id="right4-8-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </label>
+    <label for="left5-9" id="right5-9-btn" class="hidden">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </label>
+    <div class="hidden disableR">
+      <svg height="100" width="100">
+        <use xlink:href="./sprite.svg#src-1"></use>
+      </svg>
+    </div>
+
+  </div>
+</div>
+</body>
 </html>

@@ -1,1 +1,402 @@
-/* TODO */
+* {
+  margin: 0;
+  font-family: CustomFont, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --postcardImgHeight: 300px;
+  --border_color: #8F8F8F
+}
+
+body {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  padding-top: 1rem;
+  width: 700px;
+  height: 960px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.controls img {
+  width: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.filter {
+  display: none;
+  cursor: pointer;
+}
+
+.rot0:checked ~ .controls #rot90-btn,
+.rot90:checked ~ .controls #rot180-btn,
+.rot180:checked ~ .controls #rot270-btn,
+.rot270:checked ~ .controls #rot0-btn,
+.zoom1:checked ~ .controls #zoom1\.1-btn,
+.zoom1\.1:checked ~ .controls #zoom1\.5-btn,
+.zoom1\.5:checked ~ .controls #zoom1\.7-btn,
+.zoom1\.7:checked ~ .controls #zoom1-btn {
+  display: block;
+}
+
+#left1-5:checked ~ .filters-container .disableL,
+#left2-6:checked ~ .filters-container #left1-5-btn,
+#left3-7:checked ~ .filters-container #left2-6-btn,
+#left4-8:checked ~ .filters-container #left3-7-btn,
+#left5-9:checked ~ .filters-container #left4-8-btn {
+  display: block;
+}
+
+#left1-5:checked ~ .filters-container #right2-6-btn,
+#left2-6:checked ~ .filters-container #right3-7-btn,
+#left3-7:checked ~ .filters-container #right4-8-btn,
+#left4-8:checked ~ .filters-container #right5-9-btn,
+#left5-9:checked ~ .filters-container .disableR {
+  display: block;
+}
+
+#left1-5:checked ~ .filters-container .filters .f-default,
+#left1-5:checked ~ .filters-container .filters .f-2,
+#left1-5:checked ~ .filters-container .filters .f-3,
+#left1-5:checked ~ .filters-container .filters .f-4,
+#left1-5:checked ~ .filters-container .filters .f-5,
+#left2-6:checked ~ .filters-container .filters .f-2,
+#left2-6:checked ~ .filters-container .filters .f-3,
+#left2-6:checked ~ .filters-container .filters .f-4,
+#left2-6:checked ~ .filters-container .filters .f-5,
+#left2-6:checked ~ .filters-container .filters .f-6,
+#left3-7:checked ~ .filters-container .filters .f-3,
+#left3-7:checked ~ .filters-container .filters .f-4,
+#left3-7:checked ~ .filters-container .filters .f-5,
+#left3-7:checked ~ .filters-container .filters .f-6,
+#left3-7:checked ~ .filters-container .filters .f-7,
+#left4-8:checked ~ .filters-container .filters .f-4,
+#left4-8:checked ~ .filters-container .filters .f-5,
+#left4-8:checked ~ .filters-container .filters .f-6,
+#left4-8:checked ~ .filters-container .filters .f-7,
+#left4-8:checked ~ .filters-container .filters .f-8,
+#left5-9:checked ~ .filters-container .filters .f-5,
+#left5-9:checked ~ .filters-container .filters .f-6,
+#left5-9:checked ~ .filters-container .filters .f-7,
+#left5-9:checked ~ .filters-container .filters .f-8,
+#left5-9:checked ~ .filters-container .filters .f-9 {
+  display: flex;
+}
+
+
+.img-wrapper .zoom {
+  transition: 1s;
+}
+
+.zoom1:checked ~ .img-wrapper .zoom {
+  transform: scale(1);
+}
+
+.zoom1\.1:checked ~ .img-wrapper .zoom {
+  transform: scale(1.1);
+}
+
+.zoom1\.5:checked ~ .img-wrapper .zoom {
+  transform: scale(1.5);
+}
+
+.zoom1\.7:checked ~ .img-wrapper .zoom {
+  transform: scale(1.7);
+}
+
+
+.img-wrapper .rot {
+  transition: 1s;
+}
+
+.rot0:checked ~ .img-wrapper .rot {
+  transform: rotate(0);
+}
+
+.rot90:checked ~ .img-wrapper .rot {
+  transform: rotate(-90deg);
+}
+
+.rot180:checked ~ .img-wrapper .rot {
+  transform: rotate(-180deg);
+}
+
+.rot270:checked ~ .img-wrapper .rot {
+  transform: rotate(-270deg);
+}
+
+.img-wrapper .refl {
+  transition: 1s;
+}
+
+.refl-ch:checked ~ .img-wrapper .refl {
+  transform: scale(-1, 1);
+}
+
+.img-wrapper .crop {
+  overflow: hidden;
+  transition: 1s;
+}
+
+.crop:checked ~ .img-wrapper .crop-div img {
+  transform: scale(1.7);
+}
+
+.close:checked ~ .controls #refl-btn,
+.close:checked ~ .controls #crop-btn,
+.close:checked ~ .controls .zoom-btn,
+.close:checked ~ .controls .rot-btn {
+  display: none;
+}
+
+
+.img-wrapper {
+  overflow: hidden;
+  height: 60%;
+}
+
+.img-wrapper .rot,
+.img-wrapper .zoom,
+.img-wrapper .refl {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.img-wrapper .crop-div {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.img-wrapper img {
+
+  width: 100%;
+  height: 100%;
+
+}
+
+@keyframes f1 {
+  100% {
+    filter: none;
+  }
+}
+
+#f-default:checked ~ .filters-container .f-default .text {
+  font-weight: bold;
+}
+
+#f-default:checked ~ .img-wrapper img {
+  animation-name: f1;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-2 img {
+  filter: blur(5px);
+}
+
+#f-2:checked ~ .filters-container .f-2 .text {
+  font-weight: bold;
+}
+
+#f-3:checked ~ .filters-container .f-3 .text {
+  font-weight: bold;
+}
+
+#f-4:checked ~ .filters-container .f-4 .text {
+  font-weight: bold;
+}
+
+#f-5:checked ~ .filters-container .f-5 .text {
+  font-weight: bold;
+}
+
+#f-6:checked ~ .filters-container .f-6 .text {
+  font-weight: bold;
+}
+
+#f-7:checked ~ .filters-container .f-7 .text {
+  font-weight: bold;
+}
+
+#f-8:checked ~ .filters-container .f-8 .text {
+  font-weight: bold;
+}
+
+#f-9:checked ~ .filters-container .f-9 .text {
+  font-weight: bold;
+}
+
+@keyframes f2 {
+  100% {
+    filter: blur(1px);
+  }
+}
+
+#f-2:checked ~ .img-wrapper img {
+  animation-name: f2;
+  animation-fill-mode: forwards;
+}
+
+
+.filters .f-3 img {
+  filter: hue-rotate(90deg);
+}
+
+@keyframes f3 {
+  100% {
+    filter: hue-rotate(90deg);
+  }
+}
+
+#f-3:checked ~ .img-wrapper img {
+  animation-name: f3;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-4 img {
+  filter: contrast(200%);
+}
+
+@keyframes f4 {
+  100% {
+    filter: contrast(200%);
+  }
+}
+
+#f-4:checked ~ .img-wrapper img {
+  animation-name: f4;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-5 img {
+  filter: grayscale(50%);
+}
+
+@keyframes f5 {
+  100% {
+    filter: grayscale(50%);
+  }
+}
+
+#f-5:checked ~ .img-wrapper img {
+  animation-name: f5;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-6 img {
+  filter: invert(75%);
+}
+
+@keyframes f6 {
+  100% {
+    filter: invert(75%);
+  }
+}
+
+#f-6:checked ~ .img-wrapper img {
+  animation-name: f6;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-7 img {
+  filter: opacity(25%);
+}
+
+@keyframes f7 {
+  100% {
+    filter: opacity(25%);
+  }
+}
+
+#f-7:checked ~ .img-wrapper img {
+  animation-name: f7;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-8 img {
+  filter: saturate(30%);
+}
+
+@keyframes f8 {
+  100% {
+    filter: saturate(30%);
+  }
+}
+
+#f-8:checked ~ .img-wrapper img {
+  animation-name: f8;
+  animation-fill-mode: forwards;
+}
+
+.filters .f-9 img {
+  filter: sepia(60%);
+}
+
+@keyframes f9 {
+  100% {
+    filter: sepia(60%);
+  }
+}
+
+#f-9:checked ~ .img-wrapper img {
+  animation-name: f9;
+  animation-fill-mode: forwards;
+}
+
+.filters,
+.filters-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.filters-container {
+  height: 20%;
+}
+
+.filters {
+  height: 100%;
+}
+
+.filters .filter {
+  width: 100px;
+  height: 100px;
+  flex-direction: column;
+}
+
+.filters-container img {
+  width: 100px;
+  height: 100px;
+}
+
+.disableL,
+.disableR {
+  filter: grayscale(100%);
+  opacity: 40%;
+}
+
+
+
