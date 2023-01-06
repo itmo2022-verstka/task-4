@@ -1,1 +1,218 @@
-/* TODO */
+.sprite {
+  position: absolute;
+}
+
+.icon.logo {
+  fill: url(#grad);
+}
+
+.icon.logo:hover,
+.orig-input:checked ~ .top-icons .logo {
+  fill: url(#grad2);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+
+  fill: #626262;
+}
+
+.icon:hover,
+.stretch-input:checked ~ .top-icons .stretch-icon,
+.reflect-input:checked ~ .top-icons .reflect-icon,
+.rotate90-input:checked ~ .top-icons .rotate180-icon,
+.rotate180-input:checked ~ .top-icons .rotate270-icon,
+.rotate270-input:checked ~ .top-icons .rotate0-icon,
+.scale1-input:checked ~ .top-icons .scale25-icon,
+.scale25-input:checked ~ .top-icons .scale4-icon,
+.scale4-input:checked ~ .top-icons .scale6-icon,
+.scale6-input:checked ~ .top-icons .scale0-icon {
+  fill: #2f2f2f;
+}
+
+.cat-pic-container {
+  display: grid;
+  grid-template-columns: 1fr 360px 1fr;
+
+  height: 360px;
+}
+
+.original-pic {
+  display: none;
+
+  grid-column: 2 / 3;
+}
+
+.reflect-container {
+  overflow: hidden;
+  grid-column: 2 / 3;
+}
+
+.cat-pic {
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+
+  object-fit: contain;
+}
+
+.top-icons,
+.filters-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.top-icons {
+  margin: 5px 0;
+  padding: 0;
+
+  gap: 54px;
+}
+
+.filters-menu {
+  align-items: center;
+
+  gap: 5px;
+}
+
+.invisible,
+.rotate-options .icon,
+.scale-options .icon {
+  display: none;
+}
+
+.changed-pic,
+.rotate-container,
+.reflect-container,
+.scale-container {
+  transition: all 0.8s;
+}
+
+.stretch-input:checked ~ .cat-pic-container .changed-pic {
+  transform: scale(1.333);
+}
+
+.orig-input:checked ~ .cat-pic-container .changed-pic {
+  display: none;
+}
+
+.orig-input:checked ~ .cat-pic-container .original-pic {
+  display: block;
+}
+
+.rotate90-input:checked ~ .cat-pic-container .rotate-container {
+  transform: rotate(90deg);
+}
+
+.rotate180-input:checked ~ .cat-pic-container .rotate-container {
+  transform: rotate(180deg);
+}
+
+.rotate270-input:checked ~ .cat-pic-container .rotate-container {
+  transform: rotate(270deg);
+}
+
+@keyframes fake-rotate {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate0-input:checked ~ .cat-pic-container .rotate-container {
+  animation: fake-rotate 0.8s;
+}
+
+.start-rotate-input:checked ~ .top-icons .rotate90-icon,
+.rotate0-input:checked ~ .top-icons .rotate90-icon,
+.rotate90-input:checked ~ .top-icons .rotate180-icon,
+.rotate180-input:checked ~ .top-icons .rotate270-icon,
+.rotate270-input:checked ~ .top-icons .rotate0-icon,
+.scale0-input:checked ~ .top-icons .scale1-icon,
+.scale1-input:checked ~ .top-icons .scale25-icon,
+.scale25-input:checked ~ .top-icons .scale4-icon,
+.scale4-input:checked ~ .top-icons .scale6-icon,
+.scale6-input:checked ~ .top-icons .scale0-icon {
+  display: block;
+}
+
+.reflect-input:checked ~ .cat-pic-container .reflect-container {
+  transform: scaleX(-1);
+}
+
+.scale1-input:checked ~ .cat-pic-container .scale-container {
+  transform: scale(1.1);
+}
+
+.scale25-input:checked ~ .cat-pic-container .scale-container {
+  transform: scale(1.25);
+}
+
+.scale4-input:checked ~ .cat-pic-container .scale-container {
+  transform: scale(1.4);
+}
+
+.scale6-input:checked ~ .cat-pic-container .scale-container {
+  transform: scale(1.6);
+}
+
+.filter-pic {
+  width: 110px;
+  height: 110px;
+
+  object-fit: cover;
+}
+
+.arrow {
+  width: 30px;
+
+  fill: #b7b7b7;
+}
+
+.right-arrow {
+  transform: scaleX(-1);
+}
+
+.filter-name {
+  display: block;
+
+  margin: 5px 0;
+
+  font-family: 'MS Reference Sans Serif', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.no-filter-pic,
+.no-filter-input:checked ~ .cat-pic-container .changed-pic {
+  filter: brightness(1) hue-rotate(0) grayscale(0) invert(0);
+}
+
+.filter1-pic,
+.filter1-input:checked ~ .cat-pic-container .changed-pic {
+  filter: brightness(130%) hue-rotate(-20deg) grayscale(0) invert(0);
+}
+
+.filter2-pic,
+.filter2-input:checked ~ .cat-pic-container .changed-pic {
+  filter: brightness(1) hue-rotate(0) grayscale(0.65) invert(0);
+}
+
+.filter3-pic,
+.filter3-input:checked ~ .cat-pic-container .changed-pic {
+  filter: brightness(1) hue-rotate(0) grayscale(0) invert(100%);
+}
+
+.no-filter-input:checked ~ .filters-menu .no-filter-name,
+.filter1-input:checked ~ .filters-menu .filter1-name,
+.filter2-input:checked ~ .filters-menu .filter2-name,
+.filter3-input:checked ~ .filters-menu .filter3-name {
+  font-weight: bold;
+}
