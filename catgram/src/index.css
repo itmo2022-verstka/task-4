@@ -1,1 +1,267 @@
-/* TODO */
+.root {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 40%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.page .controls .control-icon {
+  max-height: 90%;
+  width: 100%;
+}
+
+.page .controls .control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1vw;
+  flex-grow: 2;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .picture-block {
+  overflow: hidden;
+  max-height: 50%;
+  flex-grow: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .picture-block .photo {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  transition : filter 600ms ease-in-out;
+}
+
+.page .picture-block .scale,
+.page .picture-block .rotate,
+.page .picture-block .mirror {
+  transition: 700ms ease-in-out;
+}
+
+.page .filters .filter.without .photo,
+.filter#without:checked ~ .picture-block .modified .photo {
+  filter: invert(0) grayscale(0) sepia(0) hue-rotate(0) saturate(1) brightness(1) contrast(1);
+}
+
+.page .filters .filter.grayscale .photo,
+.filter#grayscale:checked ~ .picture-block .modified .photo {
+  filter: invert(0) grayscale(100%) sepia(0) hue-rotate(0) saturate(1) brightness(1) contrast(1);
+}
+
+.page .filters .filter.sepia .photo,
+.filter#sepia:checked ~ .picture-block .modified .photo {
+  filter: invert(0) grayscale(0) sepia(100%) hue-rotate(-15deg) saturate(150%) brightness(85%) contrast(120%);
+}
+
+.page .filters .filter.blue .photo,
+.filter#blue:checked ~ .picture-block .modified .photo {
+  filter: invert(0) grayscale(0) sepia(0) hue-rotate(180deg) saturate(1) brightness(1) contrast(1);
+}
+
+.page .filters .filter.invert .photo,
+.filter#invert:checked ~ .picture-block .modified .photo {
+  filter: invert(1) grayscale(0) sepia(0) hue-rotate(0) saturate(1) brightness(1) contrast(1);
+}
+
+.page .filters .filter.romantic .photo,
+.filter#romantic:checked ~ .picture-block .modified .photo {
+  filter: invert(0%) grayscale(0) sepia(0%) hue-rotate(-40deg) saturate(1.3) brightness(0.85) contrast(1.2);
+}
+
+
+.page .filters .title {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  word-break: break-all;
+  hyphens: auto;
+  font-size: 1vw;
+  font-family: sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.radio,
+.checkbox {
+  display: none;
+}
+
+.crop.radio#crop-edit:not(:checked) ~ .controls .control.full,
+.crop.radio#full:not(:checked) ~ .controls .control.crop,
+
+.scale.radio#scale-1:not(:checked) ~ .controls .control.scale-2,
+.scale.radio#scale-2:not(:checked) ~ .controls .control.scale-3,
+.scale.radio#scale-3:not(:checked) ~ .controls .control.scale-1,
+
+.rotate.radio#rotate-1:not(:checked) ~ .controls .control.rotate-2,
+.rotate.radio#rotate-2:not(:checked) ~ .controls .control.rotate-3,
+.rotate.radio#rotate-3:not(:checked) ~ .controls .control.rotate-4,
+.rotate.radio#rotate-4:not(:checked) ~ .controls .control.rotate-1,
+
+.mirror.radio#mirror-on:not(:checked) ~ .controls .control.mirror-off,
+.mirror.radio#mirror-off:not(:checked) ~ .controls .control.mirror-on,
+
+.default.checkbox:not(:checked) ~ .picture-block .default,
+.default.checkbox:checked ~ .picture-block .modified
+{
+  display: none;
+}
+
+.crop.radio#crop-edit:checked ~ .picture-block .modified .photo {
+  object-fit: cover;
+  height: 30vw;
+  width: 30vw;
+
+}
+
+.scale.radio#scale-1:checked ~ .picture-block .scale {
+  transform: scale(1);
+}
+
+.scale.radio#scale-2:checked ~ .picture-block .scale {
+  transform: scale(1.25);
+}
+
+.scale.radio#scale-3:checked ~ .picture-block .scale {
+  transform: scale(1.5);
+}
+
+.rotate.radio#rotate-1:checked ~ .picture-block .rotate {
+  transform: rotate(0deg);
+}
+
+.rotate.radio#rotate-2:checked ~ .picture-block .rotate {
+  transform: rotate(-90deg);
+}
+
+.rotate.radio#rotate-3:checked ~ .picture-block .rotate {
+  transform: rotate(-180deg);
+}
+
+.rotate.radio#rotate-4:checked ~ .picture-block .rotate {
+  transform: rotate(-270deg);
+}
+
+.mirror.radio#mirror-off:checked ~ .picture-block .mirror {
+  transform: scale(-1, 1);
+}
+
+.mirror.radio#mirror-off:checked ~ .picture-block .mirror {
+  transform: rotateY(180deg);
+}
+
+.page .filters {
+  flex-grow: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 16fr 1fr;
+  grid-column-gap: 1vw;
+}
+
+.page .filters .arrow-block {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page .filters .arrow .icon {
+  max-width: 100%;
+}
+
+.page .filters .arrow.left .icon {
+  transform: scale(-1, -1);
+}
+
+.page .filters .filter {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page .filters .filter .photo {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.page .filters .titles-block {
+  display: flex;
+  grid-column-gap: 1vw;
+}
+
+.page .filters .filters-block {
+  display: flex;
+  grid-column-gap: 1vw;
+}
+
+.page .filters .titles-block .title {
+  flex: 1 1 0;
+}
+
+.arrow-block .arrow {
+  display: none;
+}
+
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .arrow-block .arrow.left.last,
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .arrow-block .arrow.right.filter-gallery-2,
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .arrow-block .arrow.left.filter-gallery-1,
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .arrow-block .arrow.right.filter-gallery-3,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .arrow-block .arrow.left.filter-gallery-2,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .arrow-block .arrow.right.last {
+  display: block;
+}
+
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .arrow-block .arrow.left.last .icon,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .arrow-block .arrow.right.last .icon {
+  filter: opacity(50%);
+}
+
+.filters .titles-block .title,
+.filters .filters-block .filter {
+  display: none;
+}
+
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .gallery-1,
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .gallery-2,
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .gallery-3,
+.filter-gallery.radio#filter-gallery-1:checked ~ .filters .gallery-4,
+
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .gallery-2,
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .gallery-3,
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .gallery-4,
+.filter-gallery.radio#filter-gallery-2:checked ~ .filters .gallery-5,
+
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .gallery-3,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .gallery-4,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .gallery-5,
+.filter-gallery.radio#filter-gallery-3:checked ~ .filters .gallery-6 {
+  display: flex;
+}
+
