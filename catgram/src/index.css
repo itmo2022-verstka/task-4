@@ -1,1 +1,228 @@
-/* TODO */
+body {
+    height: 100%;
+    font-family: sans-serif;
+}
+.content {
+    width: auto;
+    height: 95vh;
+}
+
+.edit-menu {
+    max-width: 30vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.label-icon {
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.icon {
+    height: 64px;
+    width: 64px;
+
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.icon-catgram {
+    fill: url(#gradient);
+}
+
+.cat-box {
+    width: 480px;
+    height: 480px;
+    margin: auto;
+    
+    overflow: hidden;
+
+}
+.cat-image {  
+    height: 100%;
+    width: 100%;
+}
+.edited {
+    margin: auto;
+
+    object-fit: cover;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.edited,
+.image-scaled,
+.image-rotated,
+.image-flipped {
+    transition: transform 0.5s ease-out;
+}
+
+.filters {
+    width: 700px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.arrow-rotated {
+    transform: rotate(-180deg);
+}
+.filter-title {
+    display: block;
+    text-align: center;
+}
+.preview {
+    height: 120px;
+    width: 120px;
+    display: block;
+    object-fit: cover;
+}
+.preview-bleak {
+    filter: grayscale(1);
+}
+.preview-warm {
+    filter: sepia(50%) contrast(150%) saturate(200%) brightness(100%) hue-rotate(-15deg);
+}
+.preview-cold {
+    filter: hue-rotate(180deg) sepia(75%) contrast(150%) saturate(300%) hue-rotate(180deg);
+}
+
+
+.button,
+.image-no-changes,
+.label-scale,
+.label-rotate,
+.catgram:checked ~ .cat-box > .image {
+    display: none;
+}
+
+.fit:checked ~ .cat-box .image-flipped,
+.fit:checked ~ .cat-box .edited {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.flip:checked ~ .cat-box .image-flipped {
+    transform: scale(-1, 1);
+}
+
+.catgram:checked ~ .edit-menu .label-icon {
+    animation-name: hide-icon;
+}
+
+.button.fit:checked ~ .edit-menu .icon-fit,
+.button.catgram:checked ~ .edit-menu .icon-catgram,
+
+.button.z10:checked ~ .edit-menu .icon-zoom,
+.button.z25:checked ~ .edit-menu .icon-zoom,
+.button.z50:checked ~ .edit-menu .icon-zoom,
+
+.button.r90:checked ~ .edit-menu .icon-rotate,
+.button.r180:checked ~ .edit-menu .icon-rotate,
+.button.r270:checked ~ .edit-menu .icon-rotate,
+
+.button.flip:checked ~ .edit-menu .icon-flip {
+    animation-name: highlight-icon;
+}
+
+.catgram:checked ~ .edit-menu .icon-fit,
+.catgram:checked ~ .edit-menu .icon-flip,
+.catgram:checked ~ .edit-menu .icon-zoom,
+.catgram:checked ~ .edit-menu .icon-rotate,
+.catgram:checked ~ .edit-menu .label-icon-button-catgram{
+    animation: none;
+}
+
+.catgram:checked ~ .cat-box .image-no-changes,
+
+.button.z50:checked ~ .edit-menu .label-scale:nth-child(1),
+.button.z0:checked ~ .edit-menu .label-scale:nth-child(2),
+.button.z10:checked ~ .edit-menu .label-scale:nth-child(3),
+.button.z25:checked ~ .edit-menu .label-scale:nth-child(4) {
+    display: block;
+}
+
+.button.z0:checked ~ .cat-box .image-scaled {
+    transform: scale(1);
+}
+.button.z10:checked ~ .cat-box .image-scaled {
+    transform: scale(1.1);
+}
+.button.z25:checked ~ .cat-box .image-scaled {
+    transform: scale(1.25);
+}
+.button.z50:checked ~ .cat-box .image-scaled {
+    transform: scale(1.5);
+}
+
+.button.r270:checked ~ .edit-menu .label-rotate:nth-child(1),
+.button.r0:checked ~ .edit-menu .label-rotate:nth-child(2),
+.button.r90:checked ~ .edit-menu .label-rotate:nth-child(3),
+.button.r180:checked ~ .edit-menu .label-rotate:nth-child(4) {
+    display: block;
+}
+
+.button.r0:checked ~ .cat-box .image-rotated {
+    transform: rotate(0deg);
+}
+.button.r90:checked ~ .cat-box .image-rotated {
+    transform: rotate(-90deg);
+}
+.button.r180:checked ~ .cat-box .image-rotated {
+    transform: rotate(-180deg);
+}
+.button.r270:checked ~ .cat-box .image-rotated {
+    transform: rotate(-270deg);
+}
+
+.button-nofilter:checked ~ .cat-box .image-filtered {
+    animation: none 0.5s both;
+}
+.button-bleakfilter:checked ~ .cat-box .image-filtered {
+    animation: bleak 0.5s both;
+}
+.button-warmfilter:checked ~ .cat-box .image-filtered {
+    animation: warm 0.5s both;
+}
+.button-coldfilter:checked ~ .cat-box .image-filtered {
+    animation: cold 0.5s both;
+}
+
+.button-nofilter:checked ~ .filters .none .filter-title,
+.button-bleakfilter:checked ~ .filters .bleak .filter-title,
+.button-warmfilter:checked ~ .filters .warm .filter-title,
+.button-coldfilter:checked ~ .filters .cold .filter-title {
+    font-weight: 900;
+}
+
+@keyframes hide-icon {
+    to {
+        opacity: 0;
+    }
+}
+@keyframes highlight-icon {
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+@keyframes bleak {
+    to {
+        filter: grayscale(1);
+    }
+}
+@keyframes warm {
+    to {
+        filter: sepia(50%) contrast(150%) saturate(200%) brightness(100%) hue-rotate(-15deg);
+    }
+}
+@keyframes cold {
+    to {
+        filter: hue-rotate(180deg) sepia(75%) contrast(150%) saturate(300%) hue-rotate(180deg);
+    }
+}
