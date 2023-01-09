@@ -1,1 +1,235 @@
-/* TODO */
+body {
+    font-size: 17px;
+}
+
+.insta {
+    width: 600px;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
+
+.main-img {
+    position: relative;
+
+    width: 80%;
+    height: 300px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    transition: 1s;
+}
+
+.img-default {
+    display: none;
+    position: relative;
+
+    width: 450px;
+    height: 300px;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+
+.img-default img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.image {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 1s;
+}
+
+.img-rotate,
+.img-square,
+.img-zoom,
+.img-flip,
+.img-container {
+    width: 100%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: 1s;
+}
+
+.img-square{
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transition: 1s;
+}
+
+.button-square:checked ~ .main-img .image {
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.button-zoom-0:checked ~ .buttons .label-zoom-1,
+.button-zoom-1:checked ~ .buttons .label-zoom-2,
+.button-zoom-2:checked ~ .buttons .label-zoom-3,
+.button-zoom-3:checked ~ .buttons .label-zoom-0 {
+    display: block;
+}
+
+.button-zoom-0:checked ~ .main-img .img-rotate .img-square .img-zoom {
+    transform: scale(1);
+}
+
+.button-zoom-1:checked ~ .main-img .img-rotate .img-square .img-zoom {
+    transform: scale(1.3);
+}
+
+.button-zoom-2:checked ~ .main-img .img-rotate .img-square .img-zoom {
+    transform: scale(1.7);
+}
+
+.button-zoom-3:checked ~ .main-img .img-rotate .img-square .img-zoom {
+    transform: scale(2.2);
+}
+
+.button-main:checked ~ .main-img .image {
+    display: none;
+}
+
+.button-main:checked ~ .main-img .img-default {
+     display: block;
+}
+
+
+.button-rotate-0:checked ~ .buttons .label-rotate-1,
+.button-rotate-1:checked ~ .buttons .label-rotate-2,
+.button-rotate-2:checked ~ .buttons .label-rotate-3,
+.button-rotate-3:checked ~ .buttons .label-rotate-0 {
+    display: block;
+}
+
+.button-rotate-0:checked ~ .main-img .img-rotate {
+    transform: rotate(0deg);
+}
+
+.button-rotate-1:checked ~ .main-img .img-rotate {
+    transform: rotate(-90deg);
+}
+
+.button-rotate-2:checked ~ .main-img .img-rotate {
+    transform: rotate(-180deg);
+}
+
+.button-rotate-3:checked ~ .main-img .img-rotate {
+    transform: rotate(-270deg);
+}
+
+
+.button-flip:checked ~ .main-img .img-rotate .img-square .img-zoom .img-flip {
+    transform: scale(-1, 1);
+}
+
+.filters {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    margin-top: 80px;
+    opacity: 0.2;
+}
+
+.filter-carousel {
+    display: flex;
+    justify-content: space-around;
+
+    width: 80%;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 23%;
+
+    margin-top: 20px;
+}
+
+.filter-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    background-image: url('./img/cat.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.filter-1 .filter-image {
+    filter: grayscale(1);
+}
+
+.filter-2 .filter-image {
+    filter: sepia(1);
+}
+
+.filter-3 .filter-image {
+    filter: invert(1);
+}
+
+.button-filter-0:checked ~ .filters .filter-0 .filter-name,
+.button-filter-1:checked ~ .filters .filter-1 .filter-name,
+.button-filter-2:checked ~ .filters .filter-2 .filter-name,
+.button-filter-3:checked ~ .filters .filter-3 .filter-name {
+    font-weight: bolder;
+}
+
+.button-filter-1:checked ~ .main-img .image {
+    filter: grayscale(0.8);
+}
+
+.button-filter-2:checked ~ .main-img .image {
+    filter: sepia(0.5);
+}
+
+.button-filter-3:checked ~ .main-img .image {
+    filter: invert(1);
+}

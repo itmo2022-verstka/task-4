@@ -1,11 +1,211 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>01-about-cats</title>
+    <title>04-catgram</title>
     <link rel="stylesheet" href="./index.css">
-  </head>
-  <body>
-    <!-- TODO -->
-  </body>
+</head>
+
+<body>
+
+<svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="main-icon">
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"/>
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"/>
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"/>
+        <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z"
+              fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z"
+              fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z"
+              fill="white"/>
+        <defs>
+            <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)">
+                <stop stop-color="#B13589"/>
+                <stop offset="0.79309" stop-color="#C62F94"/>
+                <stop offset="1" stop-color="#8A3AC8"/>
+            </radialGradient>
+            <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)">
+                <stop stop-color="#E0E8B7"/>
+                <stop offset="0.444662" stop-color="#FB8A2E"/>
+                <stop offset="0.71474" stop-color="#E2425C"/>
+                <stop offset="1" stop-color="#E2425C" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)">
+                <stop offset="0.156701" stop-color="#406ADC"/>
+                <stop offset="0.467799" stop-color="#6A45BE"/>
+                <stop offset="1" stop-color="#6A45BE" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+    </symbol>
+
+    <symbol id="fill-icon">
+        <path fill="#000000" fill-rule="evenodd"
+              d="M1 3.25A2.25 2.25 0 013.25 1h9.5A2.25 2.25 0 0115 3.25v9.5A2.25 2.25 0 0112.75 15h-9.5A2.25 2.25 0 011 12.75v-9.5zm2.25-.75a.75.75 0 00-.75.75v9.5c0 .414.336.75.75.75h9.5a.75.75 0 00.75-.75v-9.5a.75.75 0 00-.75-.75h-9.5z"
+              clip-rule="evenodd"/>
+    </symbol>
+
+    <symbol id="flip-icon">
+        <path d="M3.5 10h23c.674 0 .658-1 0-1h-23c-.673 0-.654 1 0 1zm1.344-4.126l-3.64 3.644 3.64 3.612c.463.45-.235 1.2-.71.71L.14 9.873c-.186-.186-.186-.525 0-.71l3.994-4c.487-.49 1.18.238.71.71zM26.5 20h-23c-.673 0-.657 1 0 1h23c.674 0 .655-1 0-1zm-1.344 4.126l3.64-3.644-3.64-3.612c-.463-.45.235-1.2.71-.71l3.994 3.967c.186.186.186.525 0 .71l-3.994 4c-.487.49-1.18-.238-.71-.71z"/>
+    </symbol>
+
+    <symbol id="rotate-icon">
+        <path d="M 37.3280 14.5587 C 38.7343 15.6134 40.1874 15.1915 40.1874 13.3399 L 40.1874 10.1290 L 40.2578 10.1290 C 45.3437 10.1290 48.5545 13.6446 48.5545 18.6603 C 48.5545 21.7774 47.5936 22.9493 47.5235 23.7930 C 47.5000 24.4493 47.7342 24.8477 48.2732 25.1056 C 49.0000 25.4571 49.8438 25.1290 50.2422 24.4493 C 50.9689 23.2071 51.4844 21.1446 51.4844 18.6368 C 51.4844 11.9337 47.0080 7.4103 40.2812 7.4103 L 40.1874 7.4103 L 40.1874 3.9649 C 40.1874 2.0665 38.7578 1.6444 37.3280 2.7227 L 30.9296 7.4103 C 29.8515 8.2071 29.8515 9.1212 30.9296 9.8946 Z M 10.5390 54.3556 L 33.7656 54.3556 C 37.7734 54.3556 39.7890 52.4337 39.7890 48.3321 L 39.7890 25.1524 C 39.7890 21.0508 37.7734 19.1290 33.7656 19.1290 L 10.5390 19.1290 C 6.5312 19.1290 4.5156 21.0508 4.5156 25.1524 L 4.5156 48.3321 C 4.5156 52.4337 6.5312 54.3556 10.5390 54.3556 Z M 10.6093 50.5821 C 9.0156 50.5821 8.2890 49.9259 8.2890 48.2618 L 8.2890 25.2227 C 8.2890 23.5587 9.0156 22.9024 10.6093 22.9024 L 33.6952 22.9024 C 35.3124 22.9024 36.0156 23.5587 36.0156 25.2227 L 36.0156 48.2618 C 36.0156 49.9259 35.3124 50.5821 33.6952 50.5821 Z"/>
+    </symbol>
+
+    <symbol id="zoom-icon">
+        <path d="M20 4L4 20" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path d="M4 7H7M10 7H7M7 7V4M7 7V10" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2"/>
+        <path d="M14 17H17H20" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </symbol>
+
+</svg>
+
+<div class="insta">
+
+    <input id="square" class="button-square none" type="checkbox">
+
+    <input id="zoom-0" class="button-zoom-0 none" type="radio" name="zoom" checked>
+    <input id="zoom-1" class="button-zoom-1 none" type="radio" name="zoom">
+    <input id="zoom-2" class="button-zoom-2 none" type="radio" name="zoom">
+    <input id="zoom-3" class="button-zoom-3 none" type="radio" name="zoom">
+
+    <input id="main" class="button-main none" type="checkbox">
+
+    <input id="rotate-0" class="button-rotate-0 none" type="radio" name="rotate" checked>
+    <input id="rotate-1" class="button-rotate-1 none" type="radio" name="rotate">
+    <input id="rotate-2" class="button-rotate-2 none" type="radio" name="rotate">
+    <input id="rotate-3" class="button-rotate-3 none" type="radio" name="rotate">
+
+    <input id="flip" class="button-flip none" type="checkbox">
+
+    <input id="filter-0" class="button-filter-0 none" type="radio" name="filter" checked>
+    <input id="filter-1" class="button-filter-1 none" type="radio" name="filter">
+    <input id="filter-2" class="button-filter-2 none" type="radio" name="filter">
+    <input id="filter-3" class="button-filter-3 none" type="radio" name="filter">
+
+    <div class="buttons">
+        <label for="square" class="label-flip">
+            <svg class="icon icon-fill">
+                <use href="#fill-icon"/>
+            </svg>
+        </label>
+
+        <label for="zoom-0" class="label-zoom-0 none">
+            <svg class="icon">
+                <use href="#zoom-icon"/>
+            </svg>
+        </label>
+        <label for="zoom-1" class="label-zoom-1 none">
+            <svg class="icon">
+                <use href="#zoom-icon"/>
+            </svg>
+        </label>
+        <label for="zoom-2" class="label-zoom-2 none">
+            <svg class="icon">
+                <use href="#zoom-icon"/>
+            </svg>
+        </label>
+        <label for="zoom-3" class="label-zoom-3 none">
+            <svg class="icon">
+                <use href="#zoom-icon"/>
+            </svg>
+        </label>
+
+        <label for="main" class="label-icon-main">
+            <svg class="icon icon-main">
+                <use href="#main-icon"/>
+            </svg>
+        </label>
+
+        <label for="rotate-0" class="label-rotate-0 none">
+            <svg class="icon">
+                <use href="#rotate-icon"/>
+            </svg>
+        </label>
+        <label for="rotate-1" class="label-rotate-1 none">
+            <svg class="icon">
+                <use href="#rotate-icon"/>
+            </svg>
+        </label>
+        <label for="rotate-2" class="label-rotate-2 none">
+            <svg class="icon">
+                <use href="#rotate-icon"/>
+            </svg>
+        </label>
+        <label for="rotate-3" class="label-rotate-3 none">
+            <svg class="icon">
+                <use href="#rotate-icon"/>
+            </svg>
+        </label>
+
+        <label for="flip" class="label-flip">
+            <svg class="icon icon-flip">
+                <use href="#flip-icon"/>
+            </svg>
+        </label>
+    </div>
+
+
+    <div class="main-img">
+        <div class="img-default">
+            <img src="img/cat.png" alt="cat">
+        </div>
+
+        <div class="image">
+            <div class="img-rotate">
+                <div class="img-square">
+                    <div class="img-zoom">
+                        <div class="img-flip">
+                            <div class="img-container">
+                                <img src="img/cat.png" alt="cat">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="filters">
+        <img class="arrow" src="img/left-arrow.png" alt="left arrow">
+
+        <div class="filter-carousel">
+            <div class="filter filter-0">
+                <text class="filter-name">Без фильтров</text>
+                <label class="filter-image" for="filter-0">
+
+                </label>
+            </div>
+            <div class="filter filter-1">
+                <text class="filter-name">Питер</text>
+                <label class="filter-image" for="filter-1">
+
+                </label>
+            </div>
+            <div class="filter filter-2">
+                <text class="filter-name">Ялта</text>
+                <label class="filter-image" for="filter-2">
+
+                </label>
+            </div>
+            <div class="filter filter-3">
+                <text class="filter-name">Лето</text>
+                <label class="filter-image" for="filter-3">
+                </label>
+            </div>
+        </div>
+
+        <img class="arrow" src="img/right-arrow.png" alt="right arrow">
+    </div>
+
+</div>
+</body>
 </html>
