@@ -1,1 +1,209 @@
-/* TODO */
+@keyframes filter-hide {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes filter-src {
+  to {
+    filter: none;
+  }
+}
+@keyframes filter-spb {
+  to {
+    filter: grayscale(2);
+  }
+}
+@keyframes filter-yalta {
+  to {
+    filter: saturate(2);
+  }
+}
+@keyframes filter-ural {
+  to {
+    filter: sepia(50%) hue-rotate(180deg) saturate(150%);
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.controls {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.control-item {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  display: flex;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+}
+
+.common-filter {
+  aspect-ratio: 1/1;
+  width: 95%;
+  max-width: 200px;
+
+  animation-fill-mode: forwards;
+  object-fit: cover;
+}
+
+.filter-name {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.picture-container {
+  display: flex;
+  justify-content: center;
+  overflow: clip;
+}
+
+.picture-source {
+  display: none;
+}
+
+.picture {
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.input-button {
+  display: none;
+}
+
+#full-id:checked ~ .picture-container .picture {
+  object-fit: contain;
+}
+#full-id:not(:checked) ~ .picture-container .picture {
+  object-fit: cover;
+}
+
+#scale-id-1-50:checked ~ .controls > .control-item > .scale-control-1-00,
+#scale-id-1-00:checked ~ .controls > .control-item > .scale-control-1-25,
+#scale-id-1-25:checked ~ .controls > .control-item > .scale-control-1-50 {
+  display: flex;
+}
+
+#scale-id-1-00:checked ~ .picture-container > .picture-scale {
+  transition: 1s;
+  transform: scale(1);
+}
+#scale-id-1-25:checked ~ .picture-container > .picture-scale {
+  transition: 1s;
+  transform: scale(1.25);
+}
+#scale-id-1-50:checked ~ .picture-container > .picture-scale {
+  transition: 1s;
+  transform: scale(1.5);
+}
+
+#logo-id:checked ~ .picture-container > .picture-scale {
+  display: none;
+}
+#logo-id:checked ~ .picture-container > .picture-source {
+  display: flex;
+}
+
+#logo-id:checked ~ .filters,
+#logo-id:checked ~ .controls > .control-item {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: filter-hide;
+}
+
+#logo-id:checked ~ .controls > .logo-item {
+  animation-name: filter-src;
+}
+
+#rotation-id-0:checked ~ .picture-container > .picture-scale > .picture-rotation {
+  transition: 1s;
+  transform: rotate(0deg);
+}
+#rotation-id-90:checked ~ .picture-container > .picture-scale > .picture-rotation {
+  transition: 1s;
+  transform: rotate(90deg);
+}
+#rotation-id-180:checked ~ .picture-container > .picture-scale > .picture-rotation {
+  transition: 1s;
+  transform: rotate(180deg);
+}
+#rotation-id-270:checked ~ .picture-container > .picture-scale > .picture-rotation {
+  transition: 1s;
+  transform: rotate(270deg);
+}
+
+#rotation-id-270:checked ~ .controls > .control-item > .rotation-control-0,
+#rotation-id-0:checked ~ .controls > .control-item > .rotation-control-90,
+#rotation-id-90:checked ~ .controls > .control-item > .rotation-control-180,
+#rotation-id-180:checked ~ .controls > .control-item > .rotation-control-270 {
+  display: flex;
+}
+
+#mirror-id:checked ~ .picture-container > .picture-scale > .picture-rotation > .picture-mirror {
+  transition: 1s;
+  transform: rotateY(180deg);
+}
+#mirror-id:not(:checked) ~ .picture-container > .picture-scale > .picture-rotation > .picture-mirror {
+  transition: 1s;
+  transform: rotateY(0deg);
+}
+
+.scale-control-1-00,
+.scale-control-1-25,
+.scale-control-1-50 {
+  display: none;
+}
+
+.rotation-control-0,
+.rotation-control-90,
+.rotation-control-180,
+.rotation-control-270 {
+  display: none;
+}
+
+#filter-id-src:checked ~ .filters > .filter-src,
+#filter-id-spb:checked ~ .filters > .filter-spb,
+#filter-id-yalta:checked ~ .filters > .filter-yalta,
+#filter-id-ural:checked ~ .filters > .filter-ural {
+  font-weight: bold;
+}
+
+.filter-src,
+#filter-id-src:checked ~ .picture-container .picture {
+  animation-name: filter-src;
+}
+
+.filter-spb,
+#filter-id-spb:checked ~ .picture-container .picture {
+  animation-name: filter-spb;
+}
+
+.filter-yalta,
+#filter-id-yalta:checked ~ .picture-container .picture {
+  animation-name: filter-yalta;
+}
+
+.filter-ural,
+#filter-id-ural:checked ~ .picture-container .picture {
+  animation-name: filter-ural;
+}
