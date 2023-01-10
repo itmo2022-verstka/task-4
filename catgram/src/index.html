@@ -1,11 +1,130 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>01-about-cats</title>
-    <link rel="stylesheet" href="./index.css">
-  </head>
-  <body>
-    <!-- TODO -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>01-about-cats</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="content">
+  <input type="checkbox" class="input-button" id="full-id">
+
+  <input type="radio" name="name-scale" class="input-button" id="scale-id-1-00" checked>
+  <input type="radio" name="name-scale" class="input-button" id="scale-id-1-25">
+  <input type="radio" name="name-scale" class="input-button" id="scale-id-1-50">
+
+  <input type="checkbox" class="input-button" id="logo-id">
+
+  <input type="radio" name="name-rotate" class="input-button" id="rotation-id-0" checked>
+  <input type="radio" name="name-rotate" class="input-button" id="rotation-id-90">
+  <input type="radio" name="name-rotate" class="input-button" id="rotation-id-180">
+  <input type="radio" name="name-rotate" class="input-button" id="rotation-id-270">
+
+  <input type="checkbox" class="input-button" id="mirror-id">
+
+  <div class="controls">
+    <label class="control-item" for="full-id">
+      <svg width="50" height="50">
+        <image xlink:href="img/full.svg" width="50" height="50"/>
+      </svg>
+    </label>
+
+    <div class="control-item">
+      <label class="scale-control-1-00" for="scale-id-1-00">
+        <svg width="50" height="50">
+          <image xlink:href="img/scale.svg" width="50" height="50"/>
+        </svg>
+      </label>
+      <label class="scale-control-1-25" for="scale-id-1-25">
+        <svg width="50" height="50">
+          <image xlink:href="img/scale.svg" width="50" height="50"/>
+        </svg>
+      </label>
+      <label class="scale-control-1-50" for="scale-id-1-50">
+        <svg width="50" height="50">
+          <image xlink:href="img/scale.svg" width="50" height="50"/>
+        </svg>
+      </label>
+    </div>
+
+    <label class="control-item logo-item" for="logo-id">
+      <svg width="50" height="50">
+        <image xlink:href="img/logo.svg" width="50" height="50"/>
+      </svg>
+    </label>
+
+    <div class="control-item">
+      <label class="rotation-control-0" for="rotation-id-0">
+        <svg width="50" height="50">
+          <image xlink:href="img/rotation.svg" width="50" height="50"/>
+        </svg>
+      </label>
+      <label class="rotation-control-90" for="rotation-id-90">
+        <svg width="50" height="50">
+          <image xlink:href="img/rotation.svg" width="50" height="50"/>
+        </svg>
+      </label>
+      <label class="rotation-control-180" for="rotation-id-180">
+        <svg width="50" height="50">
+          <image xlink:href="img/rotation.svg" width="50" height="50"/>
+        </svg>
+      </label>
+      <label class="rotation-control-270" for="rotation-id-270">
+        <svg width="50" height="50">
+          <image xlink:href="img/rotation.svg" width="50" height="50"/>
+        </svg>
+      </label>
+    </div>
+
+    <label class="control-item" for="mirror-id">
+      <svg width="50" height="50">
+        <image xlink:href="img/mirror.svg" width="50" height="50"/>
+      </svg>
+    </label>
+  </div>
+
+  <input type="radio" name="filter-control" class="input-button" id="filter-id-src" checked>
+  <input type="radio" name="filter-control" class="input-button" id="filter-id-spb">
+  <input type="radio" name="filter-control" class="input-button" id="filter-id-yalta">
+  <input type="radio" name="filter-control" class="input-button" id="filter-id-ural">
+
+  <div class="picture-container">
+    <div class="picture-scale">
+      <div class="picture-rotation">
+        <div class="picture-mirror">
+          <img class="picture" src="img/cat.jpeg" alt="cat">
+        </div>
+      </div>
+    </div>
+    <img class="picture-source" src="img/cat.jpeg" alt="cat">
+  </div>
+
+  <div class="filters">
+    <div class="filter-src">
+      <div class="filter-name">Без фильтра</div>
+      <label for="filter-id-src">
+        <img class="common-filter filter-src" src="img/cat.jpeg" alt="cat">
+      </label>
+    </div>
+    <div class="filter-spb">
+      <div class="filter-name">Питер</div>
+      <label for="filter-id-spb">
+        <img class="common-filter filter-spb" src="img/cat.jpeg" alt="cat">
+      </label>
+    </div>
+    <div class="filter-yalta">
+      <div class="filter-name">Ялта</div>
+      <label for="filter-id-yalta">
+        <img class="common-filter filter-yalta" src="img/cat.jpeg" alt="cat">
+      </label>
+    </div>
+    <div class="filter-ural">
+      <div class="filter-name">Уральское лето</div>
+      <label for="filter-id-ural">
+        <img class="common-filter filter-ural" src="img/cat.jpeg" alt="cat">
+      </label>
+    </div>
+  </div>
+</div>
+</body>
 </html>
