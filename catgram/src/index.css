@@ -279,6 +279,10 @@ input {
   --pic_height: var(--img_height);
 }
 
+#not_squared:checked ~ .picture .catimg {
+  margin-top: 0;
+}
+
 #not_squared:checked ~ .sprite .squared,
 #squared:checked ~ .sprite .not_squared {
   visibility: visible;
