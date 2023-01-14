@@ -31,7 +31,7 @@ html { box-sizing: border-box }
   height: var(--img_height);
   object-fit:cover;
   position: absolute;
-  margin: auto;
+  margin-top: calc(-1*var(--img_height)/8);
 }
 
 .slide2 {
