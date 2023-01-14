@@ -105,7 +105,7 @@ html { box-sizing: border-box }
 }
 
 .filters {
-  width: 606px;
+  width: 606px; /* 4 * 150 + 3 * 2 */
   height: 200px;
   overflow: hidden;
   margin: auto;
@@ -142,6 +142,7 @@ html { box-sizing: border-box }
 
 .right {
   right: calc((100% - 606px) / 2 - 40px);
+  /*the same as with left*/
 }
 
 .slider {
@@ -159,9 +160,6 @@ html { box-sizing: border-box }
   display: inline;
   text-align: center;
   z-index: 0;
-  /*-webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;*/
-  /*-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;*/
-  /*-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;*/
   transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
 
@@ -381,4 +379,9 @@ input {
 
 #logo:checked ~ .sprite .norm .icon {
   background-color: chartreuse;
+}
+
+.slider {
+  margin: 2px 0;
+  padding: 0;
 }
