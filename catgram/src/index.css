@@ -1,5 +1,5 @@
 :root {
-  --img_height: 500px; /*667*/
+  --img_height: 667px;
   --pic_height: 500px;
   --const_width: 500px;
   font-family: Broadway, serif;
@@ -284,22 +284,16 @@ input {
   visibility: visible;
 }
 
-#size2:checked ~ .picture .catimg,
-#size3:checked ~ .picture .catimg,
-#size4:checked ~ .picture .catimg {
-  transform: scale(1.2);
-}
-
 #size2:checked ~ .picture {
-  --img_height: 600px;
+  --img_height: 800px;
 }
 
 #size3:checked ~ .picture {
-  --img_height: 720px;
+  --img_height: 960px;
 }
 
 #size4:checked ~ .picture {
-  --img_height: 864px;
+  --img_height: 1152px;
 }
 
 #size1:checked ~ .sprite .size2,
