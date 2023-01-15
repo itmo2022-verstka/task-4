@@ -16,11 +16,34 @@ body {
 	width: 48px;
 	animation-timing-function: ease-out;
 	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+
+.icon-fill {
+	background-image: url('icons/fill.svg');
+}
+
+.icon-scale {
+	background-image: url('icons/scale.svg');
+}
+
+.icon-rotate {
+	background-image: url('icons/rotate.svg');
+}
+
+.icon-flip {
+	background-image: url('icons/flip.svg');
 }
 
 .instagram-icon {
+	background-image: url('icons/logo.svg');
 	opacity: 1;
-	fill: url(#gradient);
+}
+
+.icon-arrow-l,
+.icon-arrow-r {
+	background-image: url('icons/arrow.svg');
 }
 
 .icon-flip {
@@ -44,10 +67,22 @@ main {
 	padding: 20px;
 }
 
-.kitty,
+.image {
+	margin: 0;
+	padding: 0;
+}
+
 .kitty-img {
-	max-width: 510px;
-	max-height: 510px;
+	width: 300px;
+	height: 520px;
+	object-fit: cover;
+}
+
+.edit-img,
+.image-scaled,
+.image-rotated {
+	max-height: 520px;
+	
 }
 
 .kitty {
@@ -56,12 +91,12 @@ main {
 	margin-bottom: 70px;
 	margin-top: 0;
 	overflow: hidden;
-}
-
-.kitty-img {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
+	max-height: 520px;
+	max-width: 520px;
+	padding: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -111,12 +146,16 @@ main {
 
 .image-no-changes {
 	display: none;
+	max-height: 520px;
 }
 
 .filters {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr repeat(4, 2fr) 1fr;
+	justify-items: center;
+	/*display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-between;*/
 }
 
 .filter {
@@ -127,6 +166,8 @@ main {
 	height: 160px;
 	width: 160px;
 	object-fit: cover;
+	padding: 0;
+	margin: 0;
 }
 
 .filter-name {
@@ -160,6 +201,10 @@ main {
 /*********************************************************************/
 
 .edit-img {
+	max-height: 520px;
+	height: 100%;
+	max-width: 520px;
+	width: 100%;
 	object-fit: cover;
 	display: flex;
 	align-items: center;
@@ -176,8 +221,8 @@ main {
 
 .input-fill:checked ~ .kitty .image-flipped,
 .input-fill:checked ~ .kitty .edit-img {
-	height: 350px;
-	width: 350px;
+	height: 300px;
+	width: 300px;
 	object-fit: cover;
 }
 
@@ -373,6 +418,14 @@ main {
 }
 
 
+.arrows-left,
+.arrows-right {
+	height: 48px;
+	width: 48px;
+	padding: 0;
+	margin: auto;
+	margin-bottom: 56px; /* filter image (160 / 2) - icon (48 / 2) = 80 - 24 = 56 */
+}
 
 /***********  RIGHT **********/
 
