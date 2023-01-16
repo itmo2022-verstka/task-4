@@ -1,4 +1,5 @@
 :root {
+  --init_img_height: 667px;
   --img_height: 667px;
   --pic_height: 500px;
   --const_width: 500px;
@@ -346,10 +347,17 @@ input {
   visibility: visible;
 }
 
-#logo:checked ~ .picture {
-  --pic_height: var(--const_width);
-  --img_height: var(--const_width);
-  transform: revert;
+#logo:checked ~ .picture .catimg {
+  height: var(--init_img_height);
+  object-fit:cover;
+  margin-top: calc(-1*var(--img_height)/8);
+  animation: anim1 1s forwards;
+}
+
+@keyframes anim1 {
+  to {
+    filter: none;
+  }
 }
 
 #logo:checked ~ .picture,
@@ -361,16 +369,6 @@ input {
 #logo:checked ~ .sprite .norm,
 #norm:checked ~ .sprite .logo {
   visibility: visible;
-}
-
-#logo:checked ~ .picture {
-  --pic_height: var(--const_width);
-  --img_height: var(--const_width);
-}
-
-#logo:checked ~ .picture .cat1 {
-  visibility: visible;
-  z-index: 2;
 }
 
 #logo:checked ~ .sprite .norm .icon {
