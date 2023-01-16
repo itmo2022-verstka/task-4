@@ -168,7 +168,7 @@ html { box-sizing: border-box }
   position: absolute;
 }
 
-.slides img {
+.filters_img {
   height: 150px;
   width: 150px;
   object-fit: cover;
@@ -307,17 +307,17 @@ input {
 }
 
 #left:checked ~ .picture,
-#left:checked ~ .footer .filters .slider .slides img {
+#left:checked ~ .footer .filters_img {
   transform: rotate(-90deg);
 }
 
 #down:checked ~ .picture,
-#down:checked ~ .footer .filters .slider .slides img {
+#down:checked ~ .footer .filters_img {
   transform: rotate(-180deg);
 }
 
 #right:checked ~ .picture,
-#right:checked ~ .filters_img {
+#right:checked ~ .footer .filters_img {
   transform: rotate(-270deg);
 }
 
@@ -338,7 +338,7 @@ input {
 }
 
 #mirrored:checked ~ .picture,
-#mirrored:checked ~ .filters_img {
+#mirrored:checked ~ .footer .filters_img {
   transform: rotateY(180deg);
 }
 
@@ -362,7 +362,7 @@ input {
 
 #logo:checked ~ .picture,
 #logo:checked ~ .picture .catimg,
-#logo:checked ~ .filters_img {
+#logo:checked ~ .footer .filters_img {
   transform: revert;
 }
 
