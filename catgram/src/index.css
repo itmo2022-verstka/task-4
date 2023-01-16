@@ -275,12 +275,10 @@ input {
   margin-left: calc(-74px - 1em);
 }
 
-#not_squared:checked ~ .picture {
-  --pic_height: var(--img_height);
-}
-
 #not_squared:checked ~ .picture .catimg {
   margin-top: 0;
+  object-fit: contain;
+  height: var(--pic_height);
 }
 
 #not_squared:checked ~ .sprite .squared,
