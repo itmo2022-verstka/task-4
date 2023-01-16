@@ -350,7 +350,7 @@ input {
 #logo:checked ~ .picture .catimg {
   height: var(--init_img_height);
   object-fit:cover;
-  margin-top: calc(-1*var(--img_height)/8);
+  margin-top: calc(-1*var(--init_img_height)/8);
   animation: anim1 1s forwards;
 }
 
