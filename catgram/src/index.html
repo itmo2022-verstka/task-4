@@ -33,137 +33,172 @@
       <input type="radio" checked name="page-control" class="controls" id="page-control-0">
       <input type="radio" name="page-control" class="controls" id="page-control-1">
 
-      <div class="tools">
+      <section class="tools">
         <div class="tool">
           <label class="scale-control-label" for="scale-control-100">
-            <img class="tools-img" src="icons/scale_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#scale"></use>
+            </svg>
           </label>
           <label class="scale-control-label" for="scale-control-125">
-            <img class="tools-img" src="icons/scale_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#scale"></use>
+            </svg>
           </label>
           <label class="scale-control-label" for="scale-control-150">
-            <img class="tools-img" src="icons/scale_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#scale"></use>
+            </svg>
           </label>
           <label class="scale-control-label" for="scale-control-300">
-            <img class="tools-img" src="icons/scale_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#scale"></use>
+            </svg>
           </label>
         </div>
         <div class="tool">
           <label class="rotate-control-label" for="rotate-control-0">
-            <img class="tools-img" src="icons/rotate_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#rotate"></use>
+            </svg>
           </label>
           <label class="rotate-control-label" for="rotate-control-90">
-            <img class="tools-img" src="icons/rotate_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#rotate"></use>
+            </svg>
           </label>
           <label class="rotate-control-label" for="rotate-control-180">
-            <img class="tools-img" src="icons/rotate_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#rotate"></use>
+            </svg>
           </label>
           <label class="rotate-control-label" for="rotate-control-270">
-            <img class="tools-img" src="icons/rotate_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#rotate"></use>
+            </svg>
           </label>
         </div>
         <div class="tool logo">
           <label for="default-control">
-            <img class="tools-img" src="icons/instagram_icon.svg" alt="tool">
+            <svg class="tools-img logo-img">
+              <radialGradient id="gradient" cx="332.14" cy="2511.81" r="3263.54"
+                              gradientUnits="userSpaceOnUse">
+                <stop offset=".09" stop-color="#fa8f21"/>
+                <stop offset=".78" stop-color="#d82d7e"/>
+              </radialGradient>
+              <use xlink:href="icons/sprite.svg#logo"></use>
+            </svg>
           </label>
         </div>
         <div class="tool">
           <label for="flip-control">
-            <img class="tools-img" src="icons/mirror_icon.svg" alt="tool">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#mirror"></use>
+            </svg>
           </label>
         </div>
         <div class="tool">
           <label for="fit-control">
-            <img class="tools-img" src="icons/fit_icon.svg" alt="">
+            <svg class="tools-img">
+              <use xlink:href="icons/sprite.svg#fill"></use>
+            </svg>
           </label>
         </div>
-      </div>
-      <div class="main-photo-wrapper">
+      </section>
+      <section class="main-photo-wrapper">
         <div class="photo-wrapper">
-          <div class="photo-wrapper scalable">
+          <picture class="photo-wrapper scalable">
             <img class="main-img" src="imgs/1.jpg" alt="Cat">
-          </div>
+          </picture>
         </div>
-        <div class="default-photo-wrapper">
+        <picture class="default-photo-wrapper">
           <img class="default-img" src="imgs/1.jpg" alt="Cat">
-        </div>
-      </div>
-      <div class="filter-container">
+        </picture>
+      </section>
+      <section class="filter-container">
         <div class="arrow">
           <div class="page-0 last-page">
             <label for="page-control-0">
-              <img class="left-arrow-img" src="icons/arrow_icon.svg" alt="tool">
+              <svg class="left-arrow-img" >
+                <use xlink:href="icons/sprite.svg#arrow"></use>
+              </svg>
             </label>
           </div>
           <div class="page-1">
             <label for="page-control-0">
-              <img class="left-arrow-img" src="icons/arrow_icon.svg" alt="tool">
+              <svg class="left-arrow-img" >
+                <use xlink:href="icons/sprite.svg#arrow"></use>
+              </svg>
             </label>
           </div>
         </div>
         <div class="filters">
-          <div class="filter page-0">
-            <div class="filter-name">No filter</div>
+          <figure class="filter page-0">
+            <figcaption class="filter-name">No filter</figcaption>
             <label for="filter-control-0">
               <img class="filter-img filter-0" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-0">
-            <div class="filter-name">Filter 1</div>
+          </figure>
+          <figure class="filter page-0">
+            <figcaption class="filter-name">Filter 1</figcaption>
             <label for="filter-control-1">
               <img class="filter-img filter-1" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-0">
-            <div class="filter-name">Filter 2</div>
+          </figure>
+          <figure class="filter page-0">
+            <figcaption class="filter-name">Filter 2</figcaption>
             <label for="filter-control-2">
               <img class="filter-img filter-2" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-0">
-            <div class="filter-name">Filter 3</div>
+          </figure>
+          <figure class="filter page-0">
+            <figcaption class="filter-name">Filter 3</figcaption>
             <label for="filter-control-3">
               <img class="filter-img filter-3" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-1">
-            <div class="filter-name">Filter 4</div>
+          </figure>
+          <figure class="filter page-1">
+            <figcaption class="filter-name">Filter 4</figcaption>
             <label for="filter-control-4">
               <img class="filter-img filter-4" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-1">
-            <div class="filter-name">Filter 5</div>
+          </figure>
+          <figure class="filter page-1">
+            <figcaption class="filter-name">Filter 5</figcaption>
             <label for="filter-control-5">
               <img class="filter-img filter-5" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-1">
-            <div class="filter-name">Filter 6</div>
+          </figure>
+          <figure class="filter page-1">
+            <figcaption class="filter-name">Filter 6</figcaption>
             <label for="filter-control-6">
               <img class="filter-img filter-6" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
-          <div class="filter page-1">
-            <div class="filter-name">Filter 7</div>
+          </figure>
+          <figure class="filter page-1">
+            <figcaption class="filter-name">Filter 7</figcaption>
             <label for="filter-control-7">
               <img class="filter-img filter-7" src="imgs/1.jpg" alt="Cat">
             </label>
-          </div>
+          </figure>
         </div>
         <div class="arrow">
           <div class="page-0">
             <label for="page-control-1">
-              <img class="right-arrow-img" src="icons/arrow_icon.svg" alt="tool">
+              <svg class="right-arrow-img" >
+                <use xlink:href="icons/sprite.svg#arrow"></use>
+              </svg>
             </label>
           </div>
           <div class="page-1 last-page">
             <label for="page-control-1">
-              <img class="right-arrow-img" src="icons/arrow_icon.svg" alt="tool">
+              <svg class="right-arrow-img" >
+                <use xlink:href="icons/sprite.svg#arrow"></use>
+              </svg>
             </label>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
