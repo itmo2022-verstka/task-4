@@ -127,16 +127,7 @@
 }
 
 .box-rotate-0:checked ~ .main-img .img-rotate {
-  animation: rotate0 1s;
-}
-
-@keyframes rotate0 {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+  transform: rotate(0deg);
 }
 
 .box-rotate-90:checked ~ .sprite .rotate-180,
