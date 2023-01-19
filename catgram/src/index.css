@@ -1,25 +1,15 @@
-* {
-  margin: 0;
-  font-family: CustomFont, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --postcardImgHeight: 300px;
-  --border_color: #8F8F8F
-}
-
 body {
-
-  position: absolute;
+  margin: 0;
   width: 100%;
   height: 100%;
-
+  font-family: CustomFont, serif;
   display: flex;
   justify-content: center;
 }
 
 .wrapper {
-  padding-top: 1rem;
-  width: 700px;
+  padding-top: 20px;
+  width: 70%;
   height: 960px;
   display: flex;
   align-content: center;
@@ -32,8 +22,38 @@ body {
 
 }
 
-.controls img {
-  width: 30px;
+.close:not(:checked) ~ .img-wrapper .wrapper-orig {
+  display: none;
+}
+
+.close:checked ~ .img-wrapper .wrapper-orig {
+  display: flex;
+}
+
+.close:checked ~ .img-wrapper .rot {
+  display: none;
+}
+
+.close:checked ~ .controls #refl-btn,
+.close:checked ~ .controls #crop-btn,
+.close:checked ~ .controls .zoom-btn,
+.close:checked ~ .controls .rot-btn,
+.close:checked ~ .filters-container {
+  display: none;
+}
+
+.wrapper-orig {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+.wrapper-orig2 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .hidden {
@@ -122,10 +142,6 @@ body {
 }
 
 
-.img-wrapper .rot {
-  transition: 1s;
-}
-
 .rot0:checked ~ .img-wrapper .rot {
   transform: rotate(0);
 }
@@ -139,8 +155,9 @@ body {
 }
 
 .rot270:checked ~ .img-wrapper .rot {
-  transform: rotate(-270deg);
+  transform: rotate(90deg);
 }
+
 
 .img-wrapper .refl {
   transition: 1s;
@@ -155,17 +172,9 @@ body {
   transition: 1s;
 }
 
-.crop:checked ~ .img-wrapper .crop-div img {
+.crop:checked ~ .img-wrapper .crop-div #picture {
   transform: scale(1.7);
 }
-
-.close:checked ~ .controls #refl-btn,
-.close:checked ~ .controls #crop-btn,
-.close:checked ~ .controls .zoom-btn,
-.close:checked ~ .controls .rot-btn {
-  display: none;
-}
-
 
 .img-wrapper {
   overflow: hidden;
@@ -189,11 +198,10 @@ body {
   align-content: center;
 }
 
-.img-wrapper img {
 
+#picture {
   width: 100%;
   height: 100%;
-
 }
 
 @keyframes f1 {
@@ -206,12 +214,12 @@ body {
   font-weight: bold;
 }
 
-#f-default:checked ~ .img-wrapper img {
+#f-default:checked ~ .img-wrapper #picture {
   animation-name: f1;
   animation-fill-mode: forwards;
 }
 
-.filters .f-2 img {
+.filters .f-2 .filter-image {
   filter: blur(5px);
 }
 
@@ -253,13 +261,13 @@ body {
   }
 }
 
-#f-2:checked ~ .img-wrapper img {
+#f-2:checked ~ .img-wrapper #picture {
   animation-name: f2;
   animation-fill-mode: forwards;
 }
 
 
-.filters .f-3 img {
+.filters .f-3 .filter-image {
   filter: hue-rotate(90deg);
 }
 
@@ -269,12 +277,12 @@ body {
   }
 }
 
-#f-3:checked ~ .img-wrapper img {
+#f-3:checked ~ .img-wrapper #picture {
   animation-name: f3;
   animation-fill-mode: forwards;
 }
 
-.filters .f-4 img {
+.filters .f-4 .filter-image {
   filter: contrast(200%);
 }
 
@@ -284,12 +292,12 @@ body {
   }
 }
 
-#f-4:checked ~ .img-wrapper img {
+#f-4:checked ~ .img-wrapper #picture {
   animation-name: f4;
   animation-fill-mode: forwards;
 }
 
-.filters .f-5 img {
+.filters .f-5 .filter-image {
   filter: grayscale(50%);
 }
 
@@ -299,12 +307,12 @@ body {
   }
 }
 
-#f-5:checked ~ .img-wrapper img {
+#f-5:checked ~ .img-wrapper #picture {
   animation-name: f5;
   animation-fill-mode: forwards;
 }
 
-.filters .f-6 img {
+.filters .f-6 .filter-image {
   filter: invert(75%);
 }
 
@@ -314,12 +322,12 @@ body {
   }
 }
 
-#f-6:checked ~ .img-wrapper img {
+#f-6:checked ~ .img-wrapper #picture {
   animation-name: f6;
   animation-fill-mode: forwards;
 }
 
-.filters .f-7 img {
+.filters .f-7 .filter-image {
   filter: opacity(25%);
 }
 
@@ -329,12 +337,12 @@ body {
   }
 }
 
-#f-7:checked ~ .img-wrapper img {
+#f-7:checked ~ .img-wrapper #picture {
   animation-name: f7;
   animation-fill-mode: forwards;
 }
 
-.filters .f-8 img {
+.filters .f-8 .filter-image {
   filter: saturate(30%);
 }
 
@@ -344,12 +352,12 @@ body {
   }
 }
 
-#f-8:checked ~ .img-wrapper img {
+#f-8:checked ~ .img-wrapper #picture {
   animation-name: f8;
   animation-fill-mode: forwards;
 }
 
-.filters .f-9 img {
+.filters .f-9 .filter-image {
   filter: sepia(60%);
 }
 
@@ -359,7 +367,7 @@ body {
   }
 }
 
-#f-9:checked ~ .img-wrapper img {
+#f-9:checked ~ .img-wrapper #picture {
   animation-name: f9;
   animation-fill-mode: forwards;
 }
@@ -387,7 +395,7 @@ body {
   flex-direction: column;
 }
 
-.filters-container img {
+.filters-container .filter-image {
   width: 100px;
   height: 100px;
 }
