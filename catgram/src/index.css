@@ -20,10 +20,11 @@ body {
 
 .logo-icon {
     opacity: 1;
-    fill: url(#gradient);
+    fill: url(gradient);
 }
 
 main {
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 90vw;
@@ -62,7 +63,6 @@ main {
     max-width: 500px;
     max-height: 500px;
     height: 100%;
-    width: 100%;
 }
 
 .arrow-left,
@@ -169,10 +169,7 @@ main {
 
 .input-crop:checked ~ .cat .image-mirrored,
 .input-crop:checked ~ .cat .edit-img {
-    margin: 62.5px;
-    width: 375px;
-    height: 375px;
-    object-fit: cover;
+    transform: scale(1.15);
 }
 
 .input-mirror:checked ~ .cat .image-mirrored {
