@@ -1,6 +1,6 @@
 :root {
-  --width: 600px;
   --image-height: 450px;
+  --image-width: 600px;
   --filter-image-height: 150px;
 }
 
@@ -23,14 +23,16 @@
 
 /*================== image ==================*/
 .cat-image {
-  margin: 20px;
+  margin: 100px;
+  display: inline-block;
 }
 
-.image {
-  display: inline-block;
+.cat-image,
+.cat-image-rotate,
+.cat-image-mirror {
   transition: all 0.5s;
-  overflow: hidden;
 }
+
 
 img {
   display: block;
@@ -39,6 +41,15 @@ img {
   width: 100%;
   transition: all 0.5s;
   filter: grayscale(0) sepia(0) hue-rotate(0);
+}
+
+/*================== sizing ==================*/
+
+.cat-image-zoom,
+.cat-image-rotate,
+.cat-image-mirror {
+  height: inherit;
+  width: inherit;
 }
 
 /*================== full and full working ==================*/
@@ -52,14 +63,18 @@ img {
   display: inline;
 }
 
-.full-switcher-1:checked ~ .cat-image .image {
+.full-switcher-1:checked ~ .cat-image {
+  overflow: hidden;
+}
+
+.full-switcher-1:checked ~ .cat-image {
+  overflow: hidden;
   height: var(--image-height);
   width: var(--image-height);
 }
 
-.full-switcher-2:checked ~ .cat-image .image {
-  height: var(--width);
-  width: var(--width);
+.full-switcher-2:checked ~ .cat-image {
+  overflow: visible;
 }
 /*================== zoom and zoom working ==================*/
 
@@ -73,16 +88,16 @@ img {
   display: inline;
 }
 
-.zoom-switcher-1:checked ~ .cat-image .cat {
+.zoom-switcher-1:checked ~ .cat-image .cat-image-rotate {
   transform: scale(1);
 }
 
-.zoom-switcher-2:checked ~ .cat-image .cat {
-  transform: scale(1.25);
+.zoom-switcher-2:checked ~ .cat-image .cat-image-rotate {
+  transform: scale(1.1);
 }
 
-.zoom-switcher-3:checked ~ .cat-image .cat {
-  transform: scale(1.5);
+.zoom-switcher-3:checked ~ .cat-image .cat-image-rotate {
+  transform: scale(1.2);
 }
 
 /*================== rotate and rotate working ==================*/
@@ -98,21 +113,20 @@ img {
   display: inline;
 }
 
-.rotate-switcher-1:checked ~ .cat-image .image {
+.rotate-switcher-1:checked ~ .cat-image {
   transform: rotate(0deg);
 }
 
-.rotate-switcher-2:checked ~ .cat-image .image {
+.rotate-switcher-2:checked ~ .cat-image {
   transform: rotate(90deg);
 }
 
-.rotate-switcher-3:checked ~ .cat-image .image {
+.rotate-switcher-3:checked ~ .cat-image {
   transform: rotate(180deg);
 }
 
-.rotate-switcher-4:checked ~ .cat-image .image {
+.rotate-switcher-4:checked ~ .cat-image {
   transform: rotate(270deg);
-
 }
 
 /*================== mirror and mirror working ==================*/
@@ -126,7 +140,7 @@ img {
   display: inline;
 }
 
-.mirror-switcher-2:checked ~ .cat-image .image {
+.mirror-switcher-2:checked ~ .cat-image .cat-image-mirror {
   transform: rotateY(180deg);
 }
 
@@ -165,7 +179,7 @@ img {
   display: none;
 }
 
-.carousel-switcher-2:checked ~ .right-carousel-switcher{
+.carousel-switcher-2:checked ~ .right-carousel-switcher {
   border-color: white;
 }
 
@@ -252,11 +266,25 @@ img {
   display: inline;
 }
 
-.original-switcher-2:checked ~ .cat-image .image img{
-  filter: none;
+.original-switcher-2:checked ~ .cat-image {
+  height: var(--image-height);
+  width: var(--image-width);
+}
+
+.original-switcher-2:checked ~ .cat-image .cat-image-img {
   transform: scale(1);
 }
 
-.original-switcher-2:checked ~ .cat-image .image {
-  transform: rotate(0deg) rotateY(0);
+.original-switcher-2:checked ~ .cat-image .cat-image-rotate {
+  transform: rotate(0deg);
+}
+
+.original-switcher-2:checked ~ .cat-image .cat-image-mirror {
+  transform: rotateY(0);
+}
+
+.original-switcher-2:checked ~ .cat-image .cat-image-img  {
+  filter: none;
+  height: 100%;
+  width: 100%;
 }
