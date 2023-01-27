@@ -2,10 +2,205 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>01-about-cats</title>
+    <title>04-catgram</title>
     <link rel="stylesheet" href="./index.css">
   </head>
-  <body>
-    <!-- TODO -->
+  <body class="body">
+    <input type="radio" class="switcher full-switcher-1" name="full-switcher" id="full-switcher-1"
+           checked>
+    <input type="radio" class="switcher full-switcher-2" name="full-switcher" id="full-switcher-2">
+    <!-- 1 - square, 2 - full -->
+
+    <input type="radio" class="switcher zoom-switcher-1" name="zoom-switcher" id="zoom-switcher-1"
+           checked>
+    <input type="radio" class="switcher zoom-switcher-2" name="zoom-switcher" id="zoom-switcher-2">
+    <input type="radio" class="switcher zoom-switcher-3" name="zoom-switcher" id="zoom-switcher-3">
+    <!-- 1 - x1, 2 - x1.1, 3 -x1.2 -->
+
+    <input type="radio" class="switcher original-switcher-1" name="original-switcher"
+           id="original-switcher-1"
+           checked>
+    <input type="radio" class="switcher original-switcher-2" name="original-switcher"
+           id="original-switcher-2">
+    <!-- 1 - with filters, 2 - orig -->
+
+    <input type="radio" class="switcher rotate-switcher-1" name="rotate-switcher" id="rotate-switcher-1"
+           checked>
+    <input type="radio" class="switcher rotate-switcher-2" name="rotate-switcher"
+           id="rotate-switcher-2">
+    <input type="radio" class="switcher rotate-switcher-3" name="rotate-switcher"
+           id="rotate-switcher-3">
+    <input type="radio" class="switcher rotate-switcher-4" name="rotate-switcher"
+           id="rotate-switcher-4">
+    <!-- 1 - 0, 2 - 90, 3 - 180, 4 - 270 -->
+
+    <input type="radio" class="switcher mirror-switcher-1" name="mirror-switcher" id="mirror-switcher-1"
+           checked>
+    <input type="radio" class="switcher mirror-switcher-2" name="mirror-switcher"
+           id="mirror-switcher-2">
+    <!-- 1 - no, 2 - mirror -->
+
+    <input type="radio" class="switcher filter-switcher-1" name="filter-switcher"
+           id="filter-switcher-1" checked>
+    <input type="radio" class="switcher filter-switcher-2" name="filter-switcher"
+           id="filter-switcher-2">
+    <input type="radio" class="switcher filter-switcher-3" name="filter-switcher"
+           id="filter-switcher-3">
+    <input type="radio" class="switcher filter-switcher-4" name="filter-switcher"
+           id="filter-switcher-4">
+    <input type="radio" class="switcher filter-switcher-5" name="filter-switcher"
+           id="filter-switcher-5">
+    <input type="radio" class="switcher filter-switcher-6" name="filter-switcher"
+           id="filter-switcher-6">
+
+    <div class="icons">
+      <label for="full-switcher-1" class="full full-switcher-1">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#full-screen"></use>
+        </svg>
+      </label>
+
+      <label for="full-switcher-2" class="full full-switcher-2">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#full-screen"></use>
+        </svg>
+      </label>
+
+      <label for="zoom-switcher-1" class="zoom zoom-switcher-1">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#zoom"></use>
+        </svg>
+      </label>
+
+      <label for="zoom-switcher-2" class="zoom zoom-switcher-2">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#zoom"></use>
+        </svg>
+      </label>
+
+      <label for="zoom-switcher-3" class="zoom zoom-switcher-3">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#zoom"></use>
+        </svg>
+      </label>
+
+      <label for="original-switcher-1" class="original original-switcher-1">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#original"></use>
+        </svg>
+      </label>
+
+      <label for="original-switcher-2" class="original original-switcher-2">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#original"></use>
+        </svg>
+      </label>
+
+      <label for="rotate-switcher-1" class="rotate rotate-switcher-1">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#rotate"></use>
+        </svg>
+      </label>
+
+      <label for="rotate-switcher-2" class="rotate rotate-switcher-2">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#rotate"></use>
+        </svg>
+      </label>
+
+      <label for="rotate-switcher-3" class="rotate rotate-switcher-3">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#rotate"></use>
+        </svg>
+      </label>
+
+      <label for="rotate-switcher-4" class="rotate rotate-switcher-4">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#rotate"></use>
+        </svg>
+      </label>
+
+      <label for="mirror-switcher-1" class="mirror mirror-switcher-1">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#mirror"></use>
+        </svg>
+      </label>
+
+      <label for="mirror-switcher-2" class="mirror mirror-switcher-2">
+        <svg class="icon">
+          <use xlink:href="./../assets/icons.svg#mirror"></use>
+        </svg>
+      </label>
+
+    </div>
+
+    <div class="cat-image">
+      <div class="cat-image-rotate">
+        <div class="cat-image-mirror">
+          <img class="cat-image-img" src="./../assets/Ginger.jpg" alt="Ginger">
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel">
+      <input type="radio" class="switcher carousel-switcher-1" name="carousel-switcher"
+             id="carousel-switcher-1" checked>
+      <input type="radio" class="switcher carousel-switcher-2" name="carousel-switcher"
+             id="carousel-switcher-2">
+
+      <label for="carousel-switcher-1" class="left-carousel-switcher arrow left"></label>
+
+      <div class="filters">
+        <div class="filter filter-1">
+          <label for="filter-switcher-1" class="filter-label">
+            <span class="filter-name">Без фильтра</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+
+        <div class="filter filter-2">
+          <label for="filter-switcher-2" class="filter-label">
+            <span class="filter-name">Питер</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+
+        <div class="filter filter-3">
+          <label for="filter-switcher-3" class="filter-label">
+            <span class="filter-name">Ялта</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+
+        <div class="filter filter-4">
+          <label for="filter-switcher-4" class="filter-label">
+            <span class="filter-name">Уральское лето</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+
+        <div class="filter filter-5">
+          <label for="filter-switcher-5" class="filter-label">
+            <span class="filter-name">Юпитер</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+
+        <div class="filter filter-6">
+          <label for="filter-switcher-6" class="filter-label">
+            <span class="filter-name">В тени леса</span>
+            <br>
+            <img src="./../assets/Ginger.jpg" alt="Ginger">
+          </label>
+        </div>
+      </div>
+
+      <label for="carousel-switcher-2" class="right-carousel-switcher arrow right"></label>
+    </div>
   </body>
 </html>
