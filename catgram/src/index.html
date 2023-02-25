@@ -2,10 +2,116 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>01-about-cats</title>
+    <title>04-catgram</title>
     <link rel="stylesheet" href="./index.css">
   </head>
-  <body>
-    <!-- TODO -->
+  <body class="catgram-content">
+    <input type="checkbox" id="show-full" class="checkbox">
+    <input type="radio" id="size-1" class="checkbox" name="size" value="size-1" checked>
+    <input type="radio" id="size-2" class="checkbox" name="size" value="size-2">
+    <input type="radio" id="size-3" class="checkbox" name="size" value="size-3">
+    <input type="checkbox" id="show-original" class="checkbox">
+    <input type="radio" id="rotate-initial" class="checkbox"
+           name="rotate" value="rotate-initial" checked>
+    <input type="radio" id="rotate-1" class="checkbox" name="rotate" value="rotate-1">
+    <input type="radio" id="rotate-2" class="checkbox" name="rotate" value="rotate-2">
+    <input type="radio" id="rotate-3" class="checkbox" name="rotate" value="rotate-3">
+    <input type="radio" id="rotate-4" class="checkbox" name="rotate" value="rotate-4">
+    <input type="checkbox" id="reflect" class="checkbox">
+
+    <input type="radio" id="filter-1" class="checkbox" name="filter" value="filter-1" checked>
+    <input type="radio" id="filter-2" class="checkbox" name="filter" value="filter-2">
+    <input type="radio" id="filter-3" class="checkbox" name="filter" value="filter-3">
+    <input type="radio" id="filter-4" class="checkbox" name="filter" value="filter-4">
+    <input type="radio" id="filter-5" class="checkbox" name="filter" value="filter-5">
+    <input type="radio" id="filter-6" class="checkbox" name="filter" value="filter-6">
+
+    <header class="actions">
+      <label for="show-full">
+        <svg class="action-icon show-full-icon"></svg>
+      </label>
+      <label for="size-1" class="radio-label">
+        <svg class="action-icon size-icon"></svg>
+      </label>
+      <label for="size-2" class="radio-label">
+        <svg class="action-icon size-icon"></svg>
+      </label>
+      <label for="size-3" class="radio-label">
+        <svg class="action-icon size-icon"></svg>
+      </label>
+      <label for="show-original">
+        <svg class="action-icon show-original-icon"></svg>
+      </label>
+      <label for="rotate-initial" class="radio-label">
+        <svg class="action-icon rotate-icon"></svg>
+      </label>
+      <label for="rotate-1" class="radio-label">
+        <svg class="action-icon rotate-icon"></svg>
+      </label>
+      <label for="rotate-2" class="radio-label">
+        <svg class="action-icon rotate-icon"></svg>
+      </label>
+      <label for="rotate-3" class="radio-label">
+        <svg class="action-icon rotate-icon"></svg>
+      </label>
+      <label for="rotate-4" class="radio-label">
+        <svg class="action-icon rotate-icon"></svg>
+      </label>
+      <label for="reflect">
+        <svg class="action-icon reflect-icon"></svg>
+      </label>
+    </header>
+    <div class="cat-image-container">
+      <img src="cat.jpg" alt="Fima" class="cat-image with-transforms">
+      <img src="cat.jpg" alt="Fima" class="cat-image without-transforms">
+    </div>
+    <footer class="filters">
+      <input type="radio" id="filters-1" class="checkbox" name="filters" value="filters-1" checked>
+      <input type="radio" id="filters-2-r" class="checkbox" name="filters" value="filters-2-r">
+      <input type="radio" id="filters-2-l" class="checkbox" name="filters" value="filters-2-l">
+      <input type="radio" id="filters-3" class="checkbox" name="filters" value="filters-3">
+      <div class="invisible-left-arrow">
+        <svg class="arrow left"></svg>
+      </div>
+      <label for="filters-1" class="radio-label">
+        <svg class="arrow left"></svg>
+      </label>
+      <label for="filters-2-l" class="radio-label">
+        <svg class="arrow left"></svg>
+      </label>
+      <label for="filter-1" class="filter-container">
+        <p class="filter-name">Без фильтра</p>
+        <img src="cat.jpg" alt="Without filters" class="filter-image">
+      </label>
+      <label for="filter-2" class="filter-container">
+        <p class="filter-name">Питер</p>
+        <img src="cat.jpg" alt="Petersburg filter" class="filter-image grayscale">
+      </label>
+      <label for="filter-3" class="filter-container">
+        <p class="filter-name">Ялта</p>
+        <img src="cat.jpg" alt="Yalta filter" class="filter-image sepia">
+      </label>
+      <label for="filter-4" class="filter-container">
+        <p class="filter-name">Уральское лето</p>
+        <img src="cat.jpg" alt="Ural summer filter" class="filter-image cold">
+      </label>
+      <label for="filter-5" class="filter-container">
+        <p class="filter-name">Лондон</p>
+        <img src="cat.jpg" alt="London filter" class="filter-image fog">
+      </label>
+      <label for="filter-6" class="filter-container">
+        <p class="filter-name">Нирвана</p>
+        <img src="cat.jpg" alt="Nirvana" class="filter-image fun">
+      </label>
+      <div class="invisible-right-arrow">
+        <svg class="arrow right"></svg>
+      </div>
+      <label for="filters-2-r" class="radio-label">
+        <svg class="arrow right"></svg>
+      </label>
+      <label for="filters-3" class="radio-label">
+        <svg class="arrow right"></svg>
+      </label>
+    </footer>
   </body>
 </html>

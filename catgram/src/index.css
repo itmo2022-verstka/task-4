@@ -1,1 +1,293 @@
-/* TODO */
+.catgram-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 630px;
+  margin: auto;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin: 20px 0 0;
+}
+
+.checkbox,
+.radio-label {
+  display: none;
+}
+
+.action-icon {
+  width: 48px;
+  height: 48px;
+
+  transition: opacity 0.2s;
+
+  background-size: 48px;
+
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.action-icon:hover {
+  transition: opacity 0.2s;
+
+  opacity: 100%;
+}
+
+.show-full-icon {
+  background-image: url('icons/show-full.svg');
+}
+
+.size-icon {
+  background-image: url('icons/size.svg');
+}
+
+.show-original-icon {
+  background-image: url('icons/show-original.svg');
+  opacity: 100%;
+}
+
+.rotate-icon {
+  background-image: url('icons/rotate.svg');
+}
+
+.reflect-icon {
+  background-image: url('icons/reflect.svg');
+}
+
+/* ------------------ */
+
+.cat-image-container {
+  position: relative;
+
+  overflow: clip;
+
+  width: 400px;
+  height: 400px;
+  margin: 20px 0 0;
+}
+
+.cat-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: inherit;
+  height: inherit;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cat-image.with-transforms {
+  z-index: 1;
+
+  transition-duration: 0.5s;
+  transition-property: scale, rotate, transform, filter, animation;
+}
+
+.cat-image.without-transforms {
+  z-index: 2;
+
+  display: none;
+}
+
+/* ------------------ */
+
+#show-full:checked ~ .cat-image-container .cat-image.with-transforms {
+  object-fit: contain;
+}
+
+#size-1:checked ~ .actions label[for='size-2'],
+#size-2:checked ~ .actions label[for='size-3'],
+#size-3:checked ~ .actions label[for='size-1'],
+#rotate-initial:checked ~ .actions label[for='rotate-2'],
+#rotate-1:checked ~ .actions label[for='rotate-2'],
+#rotate-2:checked ~ .actions label[for='rotate-3'],
+#rotate-3:checked ~ .actions label[for='rotate-4'],
+#rotate-4:checked ~ .actions label[for='rotate-1'] {
+  display: block;
+}
+
+#size-2:checked ~ .cat-image-container .cat-image.with-transforms {
+  scale: 150%;
+}
+
+#size-3:checked ~ .cat-image-container .cat-image.with-transforms {
+  scale: 200%;
+}
+
+#show-original:checked ~ .cat-image-container .cat-image.without-transforms {
+  display: block;
+}
+
+#rotate-2:checked ~ .cat-image-container .cat-image.with-transforms {
+  rotate: 90deg;
+}
+
+#rotate-3:checked ~ .cat-image-container .cat-image.with-transforms {
+  rotate: 180deg;
+}
+
+#rotate-4:checked ~ .cat-image-container .cat-image.with-transforms {
+  rotate: 270deg;
+}
+
+@keyframes rotate-to-initial {
+  0% {
+    rotate: 270deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+#rotate-1:checked ~ .cat-image-container .cat-image.with-transforms {
+  animation: rotate-to-initial 0.5s;
+}
+
+#reflect:checked ~ .cat-image-container .cat-image.with-transforms {
+  transform: scale(-1, 1);
+}
+
+/* ------------------ */
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+
+  width: 750px;
+  margin-top: 50px;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  margin-top: 20px;
+
+  transition: opacity 0.2s;
+
+  background-image: url('icons/arrow.svg');
+  background-size: 48px;
+
+  cursor: pointer;
+  opacity: 20%;
+}
+
+.arrow:hover {
+  transition: opacity 0.2s;
+
+  opacity: 60%;
+}
+
+.arrow.left {
+  margin-right: 15px;
+
+  transform: scale(-1, 1);
+}
+
+.arrow.right {
+  margin-left: 15px;
+}
+
+.invisible-left-arrow,
+.invisible-right-arrow {
+  display: none;
+}
+
+#filters-1:checked ~ label[for='filters-2-r'],
+#filters-2-r:checked ~ label[for='filters-1'],
+#filters-2-r:checked ~ label[for='filters-3'],
+#filters-2-l:checked ~ label[for='filters-1'],
+#filters-2-l:checked ~ label[for='filters-3'],
+#filters-3:checked ~ label[for='filters-2-l'] {
+  display: block;
+}
+
+#filters-1:checked ~ .invisible-left-arrow,
+#filters-3:checked ~ .invisible-right-arrow {
+  display: block;
+  visibility: hidden;
+}
+
+#filters-1:checked ~ label[for='filter-5'],
+#filters-1:checked ~ label[for='filter-6'],
+#filters-2-l:checked ~ label[for='filter-1'],
+#filters-2-l:checked ~ label[for='filter-6'],
+#filters-2-r:checked ~ label[for='filter-1'],
+#filters-2-r:checked ~ label[for='filter-6'],
+#filters-3:checked ~ label[for='filter-1'],
+#filters-3:checked ~ label[for='filter-2'] {
+  display: none;
+}
+
+.filter-container {
+  float: left;
+
+  width: 150px;
+  height: fit-content;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.filter-name {
+  width: inherit;
+  margin: 0 0 10px;
+
+  font-family: Arial, serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.filter-image {
+  width: 150px;
+  height: 150px;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.filter-image.grayscale,
+#filter-2:checked ~ .cat-image-container .cat-image.with-transforms {
+  filter: grayscale(100%) sepia(0%); /* 0% для работы transition */
+}
+
+.filter-image.sepia,
+#filter-3:checked ~ .cat-image-container .cat-image.with-transforms {
+  filter: grayscale(0%) sepia(100%);
+}
+
+.filter-image.cold,
+#filter-4:checked ~ .cat-image-container .cat-image.with-transforms {
+  filter: grayscale(0%) sepia(80%) saturate(170%) contrast(120%) hue-rotate(180deg);
+}
+
+.filter-image.fog,
+#filter-5:checked ~ .cat-image-container .cat-image.with-transforms {
+  filter: grayscale(80%) blur(2px);
+}
+
+.filter-image.fun,
+#filter-6:checked ~ .cat-image-container .cat-image.with-transforms {
+  filter: invert(100%) hue-rotate(180deg) saturate(150%);
+}
+
+#filter-1:checked ~ .filters label[for='filter-1'] .filter-name,
+#filter-2:checked ~ .filters label[for='filter-2'] .filter-name,
+#filter-3:checked ~ .filters label[for='filter-3'] .filter-name,
+#filter-4:checked ~ .filters label[for='filter-4'] .filter-name,
+#filter-5:checked ~ .filters label[for='filter-5'] .filter-name,
+#filter-6:checked ~ .filters label[for='filter-6'] .filter-name {
+  font-weight: bold;
+}
