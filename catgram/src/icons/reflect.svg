@@ -1,0 +1,13 @@
+<svg id="reflect-svg" width="96" height="96" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(90 17.9375 48)" stroke="#000" stroke-width="0" id="svg_13" d="m-5.99997,65.93749l23.93749,-35.87498l23.93749,35.87498l-47.87498,0z" fill="#000000"/>
+  <path transform="rotate(-90 78.9374 47.9687)" stroke="#000" stroke-width="8" id="svg_14" d="m62.28119,61.03122l16.65625,-26.12501l16.65625,26.12501l-33.31249,0z" fill="none"/>
+  <rect id="svg_17" height="10" width="8" y="42.9375" x="44" stroke-width="0" stroke="#000" fill="#000000"/>
+  <rect id="svg_18" height="10" width="8" y="27" x="44" stroke-width="0" stroke="#000" fill="#000000"/>
+  <rect id="svg_19" height="10" width="8" y="59" x="44" stroke-width="0" stroke="#000" fill="#000000"/>
+  <rect id="svg_20" height="10" width="8" y="75" x="44" stroke-width="0" stroke="#000" fill="#000000"/>
+  <rect id="svg_21" height="10" width="8" y="11" x="44" stroke-width="0" stroke="#000" fill="#000000"/>
+ </g>
+
+</svg>
