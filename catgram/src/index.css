@@ -1,1 +1,219 @@
-/* TODO */
+
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.catgram {
+  width: auto;
+  height: 95vh;
+}
+
+.icons {
+  width: 420px;
+  height: 85px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  height: 65px;
+  width: 65px;
+  margin: auto 10px;
+  cursor: pointer;
+}
+
+#icon-insta {
+  fill: url(#gradient);
+}
+
+.label-scale,
+.label-rotate,
+.hidden {
+  display: none;
+}
+
+.image-wrapper{
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-edited,
+.wrapper-default {
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.catgram:not(:checked) ~ .image-wrapper .wrapper-default,
+.catgram:checked ~ .image-wrapper .wrapper-edited {
+  display: none;
+}
+
+.catgram:checked ~ .image-wrapper .wrapper-default,
+.catgram:not(:checked) ~ .image-wrapper .wrapper-edited{
+  display: flex;
+}
+
+.scale50:checked ~ .icons .label-scale:nth-child(1),
+.scale0:checked ~ .icons .label-scale:nth-child(2),
+.scale10:checked ~ .icons .label-scale:nth-child(3),
+.scale25:checked ~ .icons .label-scale:nth-child(4),
+.rotate270:checked ~ .icons .label-rotate:nth-child(1),
+.rotate0:checked ~ .icons .label-rotate:nth-child(2),
+.rotate90:checked ~ .icons .label-rotate:nth-child(3),
+.rotate180:checked ~ .icons .label-rotate:nth-child(4) {
+  display: block;
+}
+
+.scale-wrapper,
+.rotate-wrapper,
+.crop-wrapper,
+.reflect-wrapper {
+  transition: transform 0.5s ease-out;
+}
+
+.scale0:checked ~ .image-wrapper .wrapper-edited .scale-wrapper {
+  transform: scale(1);
+}
+.scale10:checked ~ .image-wrapper .wrapper-edited .scale-wrapper {
+  transform: scale(1.1);
+}
+.scale25:checked ~ .image-wrapper .wrapper-edited .scale-wrapper {
+  transform: scale(1.25);
+}
+.scale50:checked ~ .image-wrapper .wrapper-edited .scale-wrapper {
+  transform: scale(1.5);
+}
+
+.crop:checked ~ .image-wrapper .wrapper-edited .crop-wrapper {
+  transform: scale(1.3854);
+}
+
+.rotate0:checked ~ .image-wrapper .wrapper-edited .rotate-wrapper {
+  animation: rotate360 0.5s;
+}
+.rotate90:checked ~ .image-wrapper .wrapper-edited .rotate-wrapper {
+  transform: rotate(90deg);
+}
+.rotate180:checked ~ .image-wrapper .wrapper-edited .rotate-wrapper {
+  transform: rotate(180deg);
+}
+.rotate270:checked ~ .image-wrapper .wrapper-edited .rotate-wrapper {
+  transform: rotate(270deg);
+}
+
+.reflect:checked ~ .image-wrapper .wrapper-edited .reflect-wrapper {
+  transform: rotateY(180deg)
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.filters {
+  width: 600px;
+  margin: 20px auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left-arrow-icon,
+.right-arrow-icon {
+  height: 30px;
+  width: 30px;
+  margin-top: 20px;
+}
+
+.right-arrow-icon {
+  transform: rotate(-180deg);
+}
+
+.preview {
+  height: 120px;
+  width: 120px;
+  display: block;
+  object-fit: cover;
+}
+
+.filter-title {
+  display: block;
+  text-align: center;
+}
+
+.preview-grayscale {
+  filter: grayscale(100%);
+}
+
+.preview-sepia {
+  filter: sepia(100%);
+}
+
+.preview-invert {
+  filter: invert(100%);
+}
+
+.base-filter-input:checked ~ .filters .nofilter .filter-title,
+.grayscale-filter-input:checked ~ .filters .grayscale-filter .filter-title,
+.sepia-filter-input:checked ~ .filters .sepia-filter .filter-title,
+.invert-filter-input:checked ~ .filters .invert-filter .filter-title {
+  font-weight: bold;
+}
+
+.base-filter-input:checked ~ .image-wrapper .wrapper-edited {
+  animation: base 0.5s both;
+}
+.grayscale-filter-input:checked ~ .image-wrapper .wrapper-edited {
+  animation: grayscale 0.5s both;
+}
+.sepia-filter-input:checked ~ .image-wrapper .wrapper-edited {
+  animation: sepia 0.5s both;
+}
+.invert-filter-input:checked ~ .image-wrapper .wrapper-edited {
+  animation: invert 0.5s both;
+}
+
+@keyframes grayscale {
+  to {
+    filter: grayscale(100%);
+  }
+}
+
+@keyframes sepia {
+  to {
+    filter: sepia(100%);
+  }
+}
+
+@keyframes invert {
+  to {
+    filter: invert(100%)
+  }
+}
+
+@keyframes base {
+  to {
+    filter: none
+  }
+}
