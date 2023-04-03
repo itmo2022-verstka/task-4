@@ -4,29 +4,79 @@ body {
   font-family: sans-serif;
 }
 
+@media (orientation: portrait) {
+  .icons {
+    width: 620px;
+    height: 120px;
+    margin-bottom: 50px;
+  }
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .image-wrapper {
+    width: 600px;
+    height: 600px;
+  }
+  .filters {
+    width: 820px;
+    margin: 80px auto;
+  }
+  .preview {
+    height: 160px;
+    width: 160px;
+  }
+  .filter-title {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) {
+  .icons {
+    width: 420px;
+    height: 85px;
+    margin-bottom: auto;
+  }
+  .icon {
+    width: 65px;
+    height: 65px;
+  }
+  .image-wrapper {
+    width: 400px;
+    height: 400px;
+  }
+  .filters {
+    width: 680px;
+    margin: 20px auto;
+  }
+  .preview{
+    height: 130px;
+    width: 130px;
+  }
+  .filter-title {
+    font-size: 14px;
+  }
+}
+
 .catgram {
-  width: auto;
-  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 
 .icons {
-  width: 420px;
-  height: 85px;
-  margin: auto;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .icon {
-  height: 65px;
-  width: 65px;
   margin: auto 10px;
   cursor: pointer;
 }
 
-#icon-insta {
+.icon-catgram {
   fill: url(#gradient);
 }
 
@@ -37,8 +87,6 @@ body {
 }
 
 .image-wrapper{
-  width: 400px;
-  height: 400px;
   margin: auto;
   overflow: hidden;
   display: flex;
@@ -130,9 +178,6 @@ body {
 
 
 .filters {
-  width: 600px;
-  margin: 20px auto;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -141,8 +186,8 @@ body {
 
 .left-arrow-icon,
 .right-arrow-icon {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   margin-top: 20px;
 }
 
@@ -151,8 +196,6 @@ body {
 }
 
 .preview {
-  height: 120px;
-  width: 120px;
   display: block;
   object-fit: cover;
 }
